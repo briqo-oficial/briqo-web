@@ -68,18 +68,33 @@
         </div>
     </section>
 
-    <section class="py-20 bg-white overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-slate-900 mb-8 text-center">Impacto Real en la Mixteca</h2>
-            <p class="text-center text-slate-500 mb-10">Desliza para ver cómo transformamos la contaminación en hogares.</p>
-            <div class="before-after-container relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl reveal">
-                <div class="after-img absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1518005020250-eca8de23788a?q=80&w=1200');"></div>
-                <div class="before-img absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1530587191325-3db32d826c18?q=80&w=1200'); width: 50%;"></div>
-                <input type="range" min="0" max="100" value="50" class="slider absolute inset-0 w-full h-full opacity-0 cursor-ew-resize" id="impactSlider">
-                <div class="slider-line absolute top-0 bottom-0 w-1 bg-white left-1/2 pointer-events-none shadow-lg"></div>
+    <section id="acabados" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-slate-900 mb-4 italic">Impacto Real en la Mixteca</h2>
+        <p class="text-slate-500 mb-12 uppercase text-[10px] tracking-[0.4em] font-bold">Versatilidad arquitectónica de BRIQO</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+            <div class="group relative overflow-hidden rounded-3xl shadow-lg h-80">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=600" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-slate-900/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="text-white font-black italic uppercase tracking-widest">Textura Natural</span>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-3xl shadow-lg h-80">
+                <img src="https://images.unsplash.com/photo-1516156008625-3a9d60677675?q=80&w=600" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-slate-900/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="text-white font-black italic uppercase tracking-widest">Acabado Pulido</span>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-3xl shadow-lg h-80">
+                <img src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?q=80&w=600" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-slate-900/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="text-white font-black italic uppercase tracking-widest">Recubrimiento Epóxico</span>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section id="calculadora" class="py-20 bg-slate-50">
         <div class="max-w-4xl mx-auto px-6 text-center">
@@ -141,6 +156,35 @@
         </div>
     </section>
 
+    <section id="sismica" class="py-24 bg-slate-950 text-white italic">
+    <div class="max-w-6xl mx-auto px-10">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="reveal">
+                <h2 class="text-orange-500 text-xs font-black uppercase tracking-[0.6em] mb-6">Seguridad Estructural</h2>
+                <h3 class="text-4xl font-black mb-8 italic uppercase tracking-tighter">Comportamiento Ante Sismos</h3>
+                <p class="text-slate-400 text-lg font-light leading-relaxed mb-8">
+                    Gracias a la **flexibilidad molecular** de los polímeros PET, el ladrillo BRIQO presenta un coeficiente de disipación de energía superior al block de concreto. En eventos sísmicos, la matriz plástica actúa como un amortiguador, reduciendo la propagación de grietas críticas en muros de carga.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10 italic">
+                        <span class="text-orange-500 font-black text-2xl">0.45</span>
+                        <p class="text-[10px] uppercase text-slate-500 mt-2 font-bold">Coeficiente Amortiguamiento</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10 italic">
+                        <span class="text-orange-500 font-black text-2xl">Z-3</span>
+                        <p class="text-[10px] uppercase text-slate-500 mt-2 font-bold">Apto para Zona Sísmica</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative reveal italic">
+                <div class="p-16 bg-white/5 rounded-full border-4 border-dashed border-orange-500/30 flex items-center justify-center animate-pulse">
+                    <i class="fas fa-house-chimney-crack text-8xl text-orange-500"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <section id="propuesta" class="bg-slate-900 text-white rounded-[50px] mx-4 my-8">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h2 class="text-white mb-12">Especificaciones de Alto Rendimiento</h2>
@@ -195,6 +239,30 @@
             </div>
         </div>
     </section>
+
+     <section id="roi" class="py-24 bg-slate-900 text-white italic rounded-[80px] mx-6">
+    <div class="max-w-5xl mx-auto px-10 text-center">
+        <h2 class="text-white text-4xl font-black mb-16 uppercase tracking-widest">Impacto Financiero a Largo Plazo</h2>
+        <div class="grid md:grid-cols-2 gap-16 items-center reveal">
+            <div class="text-left space-y-10">
+                <div class="border-l-4 border-orange-500 pl-8">
+                    <h4 class="text-orange-500 font-black text-2xl italic leading-none mb-2">-35%</h4>
+                    <p class="text-sm font-light">En costos de mantenimiento por impermeabilización (BRIQO no absorbe humedad).</p>
+                </div>
+                <div class="border-l-4 border-orange-500 pl-8">
+                    <h4 class="text-orange-500 font-black text-2xl italic leading-none mb-2">-25%</h4>
+                    <p class="text-sm font-light">En tiempo de ejecución de obra gracias al diseño ergonómico del ladrillo.</p>
+                </div>
+            </div>
+            <div class="p-12 bg-white/5 rounded-[4rem] border border-white/10 backdrop-blur-xl">
+                <i class="fas fa-chart-line text-5xl text-orange-600 mb-8"></i>
+                <h4 class="text-xl font-black italic mb-4">Plusvalía Sustentable</h4>
+                <p class="text-sm text-slate-400 font-light italic">Las construcciones con sello BRIQO aumentan su valor comercial al cumplir con las certificaciones de vivienda verde exigidas por organismos federales.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <section id="comparativa" class="py-20 bg-slate-50">
         <div class="max-w-6xl mx-auto px-6">
@@ -254,6 +322,40 @@
         </div>
     </section>
 
+    <section id="especificaciones" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-slate-900 mb-12 text-center italic">Análisis Comparativo</h2>
+        <div class="overflow-x-auto reveal shadow-2xl rounded-3xl">
+            <table class="w-full text-left bg-white">
+                <thead class="bg-slate-900 text-white">
+                    <tr>
+                        <th class="p-6 uppercase text-[10px] tracking-widest">Parámetro Técnico</th>
+                        <th class="p-6 uppercase text-[10px] tracking-widest text-orange-500">Ladrillo BRIQO</th>
+                        <th class="p-6 uppercase text-[10px] tracking-widest">Block Cemento</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm italic">
+                    <tr class="border-b border-slate-100">
+                        <td class="p-6 font-bold">Conductividad Térmica (k)</td>
+                        <td class="p-6 text-green-600 font-black">0.14 W/m·K</td>
+                        <td class="p-6">1.10 W/m·K</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="p-6 font-bold">Densidad Estructural</td>
+                        <td class="p-6 text-green-600 font-black">1250 kg/m³</td>
+                        <td class="p-6">1900 kg/m³</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="p-6 font-bold">Absorción H2O (24h)</td>
+                        <td class="p-6 text-green-600 font-black">< 4.8%</td>
+                        <td class="p-6">> 15.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
     <section class="py-20 bg-slate-900 text-white rounded-[50px] mx-4 my-8">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h2 class="text-white mb-12 italic">Confort Térmico: BRIQO vs Block</h2>
@@ -298,6 +400,34 @@
             </div>
         </div>
     </section>
+
+    <section id="materiales-detalle" class="py-32 bg-white italic">
+    <div class="max-w-7xl mx-auto px-10">
+        <h2 class="text-slate-900 text-center text-5xl font-black mb-20 uppercase tracking-tighter">Análisis de Componentes</h2>
+        <div class="grid md:grid-cols-4 gap-8 reveal">
+            <div class="p-8 bg-slate-50 rounded-[3rem] border border-slate-100 italic transition-all hover:bg-white hover:shadow-xl">
+                <i class="fas fa-microscope text-orange-600 text-3xl mb-6"></i>
+                <h4 class="font-black text-sm uppercase mb-4">Polímero PET</h4>
+                <p class="text-[11px] text-slate-500 leading-relaxed">Resina termoplástica de alta cristalinidad que aporta la tenacidad y resistencia al impacto del ladrillo.</p>
+            </div>
+            <div class="p-8 bg-slate-50 rounded-[3rem] border border-slate-100 italic transition-all hover:bg-white hover:shadow-xl">
+                <i class="fas fa-wind text-orange-600 text-3xl mb-6"></i>
+                <h4 class="font-black text-sm uppercase mb-4">EPS Reciclado</h4>
+                <p class="text-[11px] text-slate-500 leading-relaxed">Poliestireno expandido triturado que genera alvéolos de aire, optimizando el aislamiento acústico.</p>
+            </div>
+            <div class="p-8 bg-slate-50 rounded-[3rem] border border-slate-100 italic transition-all hover:bg-white hover:shadow-xl">
+                <i class="fas fa-mountain text-orange-600 text-3xl mb-6"></i>
+                <h4 class="font-black text-sm uppercase mb-4">Árido Regional</h4>
+                <p class="text-[11px] text-slate-500 leading-relaxed">Arena sílica de la región Mixteca que actúa como refuerzo mineral en la matriz cementante.</p>
+            </div>
+            <div class="p-8 bg-slate-50 rounded-[3rem] border border-slate-100 italic transition-all hover:bg-white hover:shadow-xl">
+                <i class="fas fa-vial text-orange-600 text-3xl mb-6"></i>
+                <h4 class="font-black text-sm uppercase mb-4">Aditivo B-26</h4>
+                <p class="text-[11px] text-slate-500 leading-relaxed">Agente químico de interfaz que garantiza la unión perfecta entre el plástico y el cemento.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6">
@@ -357,6 +487,35 @@
             </div>
         </div>
     </section>
+
+    <section id="ods" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-10 text-center italic">
+        <h2 class="text-slate-900 mb-20 text-4xl font-black uppercase tracking-tighter">Impacto Global Agenda 2030</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+            <div class="p-10 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all hover:bg-white hover:shadow-xl italic">
+                <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg">09</div>
+                <h5 class="font-black text-xs uppercase mb-3">Industria e Innovación</h5>
+                <p class="text-[11px] text-slate-400 font-light">Fomento de infraestructura resiliente.</p>
+            </div>
+            <div class="p-10 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all hover:bg-white hover:shadow-xl italic">
+                <div class="w-16 h-16 bg-orange-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg">11</div>
+                <h5 class="font-black text-xs uppercase mb-3">Ciudades Sostenibles</h5>
+                <p class="text-[11px] text-slate-400 font-light">Vivienda digna y acceso a servicios.</p>
+            </div>
+            <div class="p-10 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all hover:bg-white hover:shadow-xl italic">
+                <div class="w-16 h-16 bg-yellow-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg">12</div>
+                <h5 class="font-black text-xs uppercase mb-3">Consumo Responsable</h5>
+                <p class="text-[11px] text-slate-400 font-light">Gestión eficiente de residuos plásticos.</p>
+            </div>
+            <div class="p-10 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all hover:bg-white hover:shadow-xl italic">
+                <div class="w-16 h-16 bg-green-700 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg">13</div>
+                <h5 class="font-black text-xs uppercase mb-3">Acción por el Clima</h5>
+                <p class="text-[11px] text-slate-400 font-light">Reducción masiva de CO2 regional.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <section id="roadmap" class="bg-slate-900 text-white py-20 rounded-[50px] mx-4">
         <div class="max-w-6xl mx-auto px-6">
@@ -419,6 +578,69 @@
         </div>
     </section>
 
+    <section id="logistica" class="py-24 bg-slate-50 italic">
+    <div class="max-w-6xl mx-auto px-10">
+        <h2 class="text-slate-900 mb-16 text-center text-4xl font-black uppercase tracking-tighter italic">Infraestructura Logística</h2>
+        <div class="grid md:grid-cols-2 gap-16 items-center reveal">
+            <div class="space-y-8">
+                <div class="flex items-center space-x-6 p-8 bg-white rounded-3xl shadow-sm italic">
+                    <i class="fas fa-warehouse text-orange-600 text-3xl"></i>
+                    <div>
+                        <h4 class="font-black text-sm uppercase">Centro de Almacenaje</h4>
+                        <p class="text-xs text-slate-400">Capacidad instalada para 5,000 unidades mensuales.</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6 p-8 bg-white rounded-3xl shadow-sm italic">
+                    <i class="fas fa-route text-orange-600 text-3xl"></i>
+                    <div>
+                        <h4 class="font-black text-sm uppercase">Ruta Mixteca</h4>
+                        <p class="text-xs text-slate-400">Cobertura en Ixcaquixtla, Molcaxac y Juan N. Méndez.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-12 bg-slate-900 rounded-[4rem] text-white italic border-b-8 border-orange-600">
+                <h4 class="text-orange-500 font-black uppercase text-[10px] mb-6 italic tracking-widest">Optimización de Flete</h4>
+                <p class="text-lg font-light leading-relaxed">
+                    Al ser un ladrillo **20% más ligero**, optimizamos la carga de los camiones de transporte, reduciendo el consumo de diésel por viaje y bajando los costos de envío para el cliente final.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="py-20 bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-white mb-16 italic">Ciclo de Vida BRIQO</h2>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 reveal">
+            <div class="p-4 border border-white/10 rounded-2xl">
+                <span class="text-orange-500 font-black text-xl">01</span>
+                <h5 class="text-[10px] mt-2 font-bold uppercase tracking-widest">Recolección</h5>
+                <p class="text-[9px] text-slate-400 mt-2">Logística en Tepexi e Ixcaquixtla.</p>
+            </div>
+            <div class="p-4 border border-white/10 rounded-2xl">
+                <span class="text-orange-500 font-black text-xl">02</span>
+                <h5 class="text-[10px] mt-2 font-bold uppercase tracking-widest">Sanitización</h5>
+                <p class="text-[9px] text-slate-400 mt-2">Eliminación de impurezas orgánicas.</p>
+            </div>
+            <div class="p-4 border border-white/10 rounded-2xl">
+                <span class="text-orange-500 font-black text-xl">03</span>
+                <h5 class="text-[10px] mt-2 font-bold uppercase tracking-widest">Triturado</h5>
+                <p class="text-[9px] text-slate-400 mt-2">Molienda a 12mm de granulometría.</p>
+            </div>
+            <div class="p-4 border border-white/10 rounded-2xl">
+                <span class="text-orange-500 font-black text-xl">04</span>
+                <h5 class="text-[10px] mt-2 font-bold uppercase tracking-widest">Compresión</h5>
+                <p class="text-[9px] text-slate-400 mt-2">Moldeo vibrado de alta densidad.</p>
+            </div>
+            <div class="p-4 border border-white/10 rounded-2xl">
+                <span class="text-orange-500 font-black text-xl">05</span>
+                <h5 class="text-[10px] mt-2 font-bold uppercase tracking-widest">Re-Ciclo</h5>
+                <p class="text-[9px] text-slate-400 mt-2">100% Reciclable tras vida útil.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
     <section id="diferenciadores" class="py-20 bg-slate-50">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-slate-900 mb-12 italic">¿Por qué construir con BRIQO?</h2>
@@ -464,6 +686,19 @@
             </div>
         </div>
     </section>
+
+    <section id="normas" class="py-20 bg-white italic">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="p-10 border-2 border-dashed border-slate-200 rounded-[3rem] text-center">
+            <h2 class="text-slate-900 mb-6 italic">Garantía y Cumplimiento</h2>
+            <div class="space-y-4 text-slate-500 font-light">
+                <p>Nuestros procesos de ingeniería están alineados con la <b>NMX-C-404-ONNCCE</b> de la industria de la construcción.</p>
+                <p>Proyecto vinculado a los Objetivos de Desarrollo Sostenible (ODS 11 y 12) de la <b>Agenda 2030 de la ONU</b>.</p>
+                <p class="text-orange-600 font-bold uppercase text-[10px] tracking-widest mt-6">Responsabilidad Civil ITSR Tepexi 2026</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section id="acopio" class="py-20 bg-slate-50">
         <div class="max-w-6xl mx-auto px-6">
@@ -628,6 +863,25 @@
             </p>
         </div>
     </section>
+
+    <section id="garantia" class="py-32 bg-white italic">
+    <div class="max-w-4xl mx-auto px-10 text-center">
+        <div class="reveal">
+            <div class="inline-block p-4 bg-orange-50 rounded-full mb-8">
+                <i class="fas fa-shield-heart text-orange-600 text-4xl"></i>
+            </div>
+            <h2 class="text-slate-900 text-4xl font-black mb-8 uppercase italic">Garantía Estructural BRIQO</h2>
+            <p class="text-xl text-slate-500 font-light leading-relaxed mb-12">
+                Cada millar de ladrillos BRIQO cuenta con un certificado de lote validado en el laboratorio del ITSR, garantizando que el material mantendrá sus propiedades físicas por un periodo mínimo de <b>100 años</b> bajo condiciones climáticas extremas.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <span class="px-6 py-2 bg-slate-100 rounded-full text-[10px] font-black uppercase text-slate-500 italic">Pruebas ASTM</span>
+                <span class="px-6 py-2 bg-slate-100 rounded-full text-[10px] font-black uppercase text-slate-500 italic">ISO 14001 Ready</span>
+                <span class="px-6 py-2 bg-slate-100 rounded-full text-[10px] font-black uppercase text-slate-500 italic">Certificación Regional</span>
+            </div>
+        </div>
+    </div>
+</section>
 
     <footer class="py-10 text-center text-slate-400 text-xs uppercase tracking-[0.4em]">
         <p class="font-black text-slate-800 text-lg mb-2 text-menu uppercase italic">BRIQO: Ladrillo + Amor</p>

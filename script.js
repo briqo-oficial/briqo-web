@@ -187,3 +187,26 @@ function enviarWhatsApp() {
         alert("Por favor completa tu nombre y los metros cuadrados.");
     }
 }
+// --- 7. BARRA DE PROGRESO DE LECTURA ---
+window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.styleSheets[0].addRule('body::before', `width: ${scrolled}%`);
+});
+// --- 8. FUNCIÓN PARA ANIMAR NÚMEROS ---
+function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Modifica el evento de tu inputMetros para llamar a la animación
+// Ejemplo: animateValue(document.getElementById('res-pet'), 0, totalPet, 1000);
