@@ -14,7 +14,7 @@ Este sistema web es una herramienta técnica diseñada para concientizar sobre e
 ## 🛠️ Tecnologías Utilizadas
 * **Frontend:** HTML5, CSS3, JavaScript (ES6+).
 * **Framework de Estilos:** [Tailwind CSS](https://tailwindcss.com/).
-* **Librerías Extra:** `canvas-confetti` (celebración) y `html2canvas` (exportación de archivos).
+* **Librerías Extra:** `canvas-confetti` (celebración) y `html2canvas` 
 * **Despliegue y CI/CD:** [Vercel](https://vercel.com/) (Integración continua con GitHub).
 
 ## 👥 Equipo de Ingeniería - ITSR
@@ -24,7 +24,7 @@ Este sistema web es una herramienta técnica diseñada para concientizar sobre e
 
 ## 🌐 Visualización en Vivo
 Puedes acceder a la versión oficial del proyecto aquí:
-👉 **[briqo-web.vercel.app](https://briqo-web.vercel.app)** *(O pega aquí tu link exacto de Vercel)*
+👉 **[briqo-web.vercel.app](https://briqo-web.vercel.app)**
 
 ---
 *© 2026 - Instituto Tecnológico Superior de Tepexi de Rodríguez (ITSR)*
