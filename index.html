@@ -15,35 +15,101 @@
 </head>
 <body class="bg-white">
 
-    <nav class="fixed w-full z-50 glass">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
-            <span class="logo text-2xl font-extrabold tracking-tighter">BRI<span class="text-orange-600">QO</span></span>
-            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-500 font-menu">
-                <a href="#problematica" class="hover:text-orange-600 transition">Problema</a>
-                <a href="#calculadora" class="hover:text-orange-600 transition">Eco-Ahorro</a>
-                <a href="#propuesta" class="hover:text-orange-600 transition">Propuesta</a>
-                <a href="#laboratorio" class="hover:text-orange-600 transition">Laboratorio</a>
-                <a href="#como-funciona" class="hover:text-orange-600 transition">Proceso</a>
-                <a href="#mision" class="hover:text-orange-600 transition">Nosotros</a>
-                <a href="#faq" class="hover:text-orange-600 transition">Dudas</a>
-            </div>
-            <a href="https://wa.me/2213465959" class="text-green-500 text-2xl hover:scale-110 transition-transform">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
-    </nav>
+<nav class="fixed w-full z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+        
+        <span class="logo text-2xl font-extrabold tracking-tighter cursor-pointer">
+            BRI<span class="text-orange-600">QO</span>
+        </span>
 
-    <header class="hero text-center">
-        <div class="max-w-4xl mx-auto reveal">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-none">Innovación Sustentable: BRI<span class="text-orange-600">QO</span></h1>
-            <p class="text-xl text-slate-500 mb-10 max-w-2xl mx-auto font-light leading-relaxed italic">
-                "BRI (Brick) + QO (Amor): Transformando el PET de Tepexi en hogares sólidos."
-            </p>
-            <div class="video-container shadow-2xl reveal">
-                <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        <div class="flex items-center space-x-6">
+            
+            <div class="relative dropdown hidden md:block">
+                <button class="flex items-center space-x-2 text-slate-500 font-bold uppercase text-[10px] tracking-widest hover:text-orange-600 transition">
+                    <span>Explorar Proyecto</span>
+                    <i class="fas fa-chevron-down text-[8px]"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="#problematica" class="dropdown-item"><i class="fas fa-exclamation-triangle"></i> Problema</a>
+                    <a href="#acabados" class="dropdown-item"><i class="fas fa-eye"></i> Impacto Real</a>
+                    <a href="#calculadora" class="dropdown-item"><i class="fas fa-calculator"></i> Eco-Ahorro</a>
+                    <a href="#propuesta" class="dropdown-item"><i class="fas fa-file-alt"></i> Propuesta</a>
+                    <a href="#sismica" class="dropdown-item"><i class="fas fa-house-chimney-crack"></i> Resistencia</a>
+                    <a href="#laboratorio" class="dropdown-item"><i class="fas fa-flask"></i> Laboratorio</a>
+                    <a href="#como-funciona" class="dropdown-item"><i class="fas fa-cogs"></i> Proceso</a>
+                    <a href="#mision" class="dropdown-item"><i class="fas fa-users"></i> Nosotros</a>
+                    <a href="#faq" class="dropdown-item"><i class="fas fa-question-circle"></i> Dudas</a>
+                    <a href="#garantia" class="dropdown-item"><i class="fas fa-shield-heart"></i> Garantía</a>
+                </div>
+            </div>
+
+            <div class="relative dropdown">
+                <button class="bg-slate-900 text-white px-5 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest flex items-center hover:bg-orange-600 transition shadow-lg">
+                    Conectar <i class="fas fa-chevron-down ml-2 text-[8px]"></i>
+                </button>
+                <div class="dropdown-menu" style="right: 0;"> <a href="#" target="_blank" class="dropdown-item">
+                        <i class="fab fa-facebook text-blue-600"></i> Facebook
+                    </a>
+                    
+                    <a href="#" target="_blank" class="dropdown-item">
+                        <i class="fab fa-instagram text-pink-600"></i> Instagram
+                    </a>
+                    
+                    <a href="#" target="_blank" class="dropdown-item">
+                        <i class="fab fa-tiktok text-black"></i> TikTok
+                    </a>
+                    
+                    <a href="#" target="_blank" class="dropdown-item">
+                        <i class="fab fa-x-twitter text-slate-900"></i> X (Twitter)
+                    </a>
+                    
+                    <a href="#" target="_blank" class="dropdown-item">
+                        <i class="fab fa-youtube text-red-600"></i> YouTube
+                    </a>
+
+                    <a href="https://wa.me/2213465959" target="_blank" class="dropdown-item">
+                        <i class="fab fa-whatsapp text-green-500"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<header class="hero-section text-center pt-48 pb-40 bg-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-10 relative z-10">
+        
+        <div class="hero-text-content reveal">
+            <h1 class="text-5xl md:text-7xl font-black text-slate-900 uppercase italic tracking-tighter leading-none mb-10">
+                Innovación Sustentable: <br> <span class="text-orange-600">BRIQO</span>
+            </h1>
+            
+            <div class="max-w-3xl mx-auto border-t-2 border-orange-50 pt-12">
+                <p class="text-xl md:text-2xl text-slate-400 font-light leading-relaxed italic">
+                    "BRI (Brick) + QO (Amor): Transformando el PET de Tepexi en hogares sólidos."
+                </p>
             </div>
         </div>
-    </header>
+
+        <div class="spacer-module py-20 hidden md:block">
+            </div>
+
+        <div class="video-separation-frame max-w-5xl mx-auto reveal">
+            <div class="video-outer-glow">
+                <div class="video-container shadow-[0_60px_120px_-20px_rgba(0,0,0,0.35)] rounded-[60px] overflow-hidden border-[15px] border-slate-50">
+                    <iframe class="w-full h-full aspect-video" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&controls=1&showinfo=0" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            </div>
+
+    </div>
+</header>
     
     <section id="problematica" class="bg-slate-50">
         <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6">

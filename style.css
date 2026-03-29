@@ -281,3 +281,95 @@ body::before {
     opacity: 1;
     transform: scale(1.05);
 }
+
+/* --- LÓGICA DE MENÚS DESPLEGABLES --- */
+.dropdown {
+    position: relative;
+}
+
+/* El menú se oculta por defecto */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background: white;
+    min-width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 1px solid #f1f5f9;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+/* Aparece al pasar el mouse por el contenedor padre */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeInMenu 0.3s ease;
+}
+
+@keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo de los links dentro del menú */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background-color: #fff7ed;
+    color: #ea580c;
+    padding-left: 25px;
+}
+
+.dropdown-item i {
+    margin-right: 12px;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+/* ============================================================
+   CONTROL DE ESPACIADO DINÁMICO Y MARCO DE VIDEO
+   ============================================================ */
+
+.spacer-module {
+    height: 100px; /* Espacio extra real en pixeles */
+}
+
+.video-separation-frame {
+    margin-top: 50px !important; /* Margen base */
+    position: relative;
+    z-index: 5;
+}
+
+@media (min-width: 1024px) {
+    .video-separation-frame {
+        margin-top: 180px !important; /* SEPARACIÓN MÁXIMA PARA ESCRITORIO */
+    }
+}
+
+.video-outer-glow {
+    position: relative;
+    background: radial-gradient(circle, rgba(234, 88, 12, 0.08) 0%, transparent 80%);
+    padding: 30px;
+    border-radius: 80px;
+}
+
+/* Animación específica para que el video suba suavemente al aparecer */
+.video-separation-frame.active {
+    animation: slideUpVideo 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes slideUpVideo {
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 1; transform: translateY(0); }
+}

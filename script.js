@@ -210,3 +210,30 @@ function animateValue(obj, start, end, duration) {
 
 // Modifica el evento de tu inputMetros para llamar a la animación
 // Ejemplo: animateValue(document.getElementById('res-pet'), 0, totalPet, 1000);
+/**
+ * LÓGICA DE CONTROL PARA EL MÓDULO DE VIDEO SEPARADO
+ * Este bloque gestiona el comportamiento visual del frame premium
+ */
+const initVideoScroll = () => {
+    const videoModule = document.querySelector('.video-separation-frame');
+    
+    const videoOptions = {
+        threshold: 0.2
+    };
+
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Incrementamos la sombra dinámicamente al entrar
+                entry.target.style.filter = "drop-shadow(0 30px 50px rgba(234, 88, 12, 0.2))";
+            }
+        });
+    }, videoOptions);
+
+    if (videoModule) {
+        videoObserver.observe(videoModule);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', initVideoScroll);
