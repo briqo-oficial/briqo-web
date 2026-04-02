@@ -3,76 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>BRIQO | Ladrillos Ecológicos de Alto Impacto</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body class="bg-white">
 
-<nav class="fixed w-full z-50 glass">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+<section id="ejemplo" class="w-full px-4 md:px-10 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+        </div>
+</section>
+
+<nav class="fixed w-full z-[6000] glass h-20">
+    <div class="max-w-7xl mx-auto px-8 h-full flex justify-between items-center">
         
-        <span class="logo text-2xl font-extrabold tracking-tighter cursor-pointer">
+        <span class="logo text-3xl font-black tracking-tighter cursor-pointer text-slate-900 italic">
             BRI<span class="text-orange-600">QO</span>
         </span>
 
-        <div class="flex items-center space-x-6">
-            
-            <div class="relative dropdown hidden md:block">
-                <button class="flex items-center space-x-2 text-slate-500 font-bold uppercase text-[10px] tracking-widest hover:text-orange-600 transition">
-                    <span>Explorar Proyecto</span>
+        <div class="flex items-center space-x-8">
+            <div class="relative dropdown hidden lg:block">
+                <button class="flex items-center space-x-2 text-slate-500 font-bold uppercase text-[11px] tracking-[0.2em] hover:text-orange-600 transition py-2">
+                    <span>Índice del Proyecto</span>
                     <i class="fas fa-chevron-down text-[8px]"></i>
                 </button>
-                <div class="dropdown-menu">
-                    <a href="#problematica" class="dropdown-item"><i class="fas fa-exclamation-triangle"></i> Problema</a>
-                    <a href="#acabados" class="dropdown-item"><i class="fas fa-eye"></i> Impacto Real</a>
-                    <a href="#calculadora" class="dropdown-item"><i class="fas fa-calculator"></i> Eco-Ahorro</a>
-                    <a href="#propuesta" class="dropdown-item"><i class="fas fa-file-alt"></i> Propuesta</a>
-                    <a href="#sismica" class="dropdown-item"><i class="fas fa-house-chimney-crack"></i> Resistencia</a>
-                    <a href="#laboratorio" class="dropdown-item"><i class="fas fa-flask"></i> Laboratorio</a>
-                    <a href="#como-funciona" class="dropdown-item"><i class="fas fa-cogs"></i> Proceso</a>
-                    <a href="#mision" class="dropdown-item"><i class="fas fa-users"></i> Nosotros</a>
-                    <a href="#faq" class="dropdown-item"><i class="fas fa-question-circle"></i> Dudas</a>
-                    <a href="#garantia" class="dropdown-item"><i class="fas fa-shield-heart"></i> Garantía</a>
+                <div class="dropdown-menu" style="left: -20px;">
+                    <a href="#problematica" class="dropdown-item"><i class="fas fa-biohazard"></i> Problemática Regional</a>
+                    <a href="#acabados" class="dropdown-item"><i class="fas fa-fill-drip"></i> Estética y Acabados</a>
+                    <a href="#impacto-visual" class="dropdown-item"><i class="fas fa-images"></i> Galería Antes/Después</a>
+                    
+                    <a href="#calculadora" class="dropdown-item"><i class="fas fa-calculator"></i> Eco-Calculadora Pro</a>
+                    <a href="#dosificacion" class="dropdown-item"><i class="fas fa-atom"></i> Dosificación Molecular</a>
+                    <a href="#materiales-detalle" class="dropdown-item"><i class="fas fa-microscope"></i> Análisis de Componentes</a>
+                    <a href="#sismica" class="dropdown-item"><i class="fas fa-house-chimney-crack"></i> Resistencia Sísmica</a>
+                    
+                    <a href="#costos" class="dropdown-item"><i class="fas fa-hand-holding-dollar"></i> Viabilidad Económica</a>
+                    <a href="#roi" class="dropdown-item"><i class="fas fa-chart-line"></i> Retorno de Inversión</a>
+                    <a href="#propuesta" class="dropdown-item"><i class="fas fa-file-invoice"></i> Ficha de Ingeniería</a>
+                    <a href="#normatividad" class="dropdown-item"><i class="fas fa-file-shield"></i> Blindaje Normativo</a>
+                    <a href="#laboratorio" class="dropdown-item"><i class="fas fa-flask-vial"></i> Pruebas ITSR</a>
+                    
+                    <a href="#como-funciona" class="dropdown-item"><i class="fas fa-gears"></i> Proceso Industrial</a>
+                    <a href="#logistica" class="dropdown-item"><i class="fas fa-truck-fast"></i> Cadena de Suministro</a>
+                    <a href="#acopio" class="dropdown-item"><i class="fas fa-map-location-dot"></i> Red de Acopio</a>
+                    <a href="#mision" class="dropdown-item"><i class="fas fa-flag"></i> Misión y Visión</a>
+                    <a href="#equipo" class="dropdown-item"><i class="fas fa-user-group"></i> Ingeniería Humana</a>
+                    <a href="#garantia" class="dropdown-item"><i class="fas fa-shield-heart"></i> Garantía 100 Años</a>
                 </div>
             </div>
 
             <div class="relative dropdown">
-                <button class="bg-slate-900 text-white px-5 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest flex items-center hover:bg-orange-600 transition shadow-lg">
+                <button class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-black text-[10px] uppercase tracking-widest flex items-center hover:bg-orange-600 transition shadow-xl">
                     Conectar <i class="fas fa-chevron-down ml-2 text-[8px]"></i>
                 </button>
-                <div class="dropdown-menu" style="right: 0;"> <a href="#" target="_blank" class="dropdown-item">
-                        <i class="fab fa-facebook text-blue-600"></i> Facebook
-                    </a>
-                    
-                    <a href="#" target="_blank" class="dropdown-item">
-                        <i class="fab fa-instagram text-pink-600"></i> Instagram
-                    </a>
-                    
-                    <a href="#" target="_blank" class="dropdown-item">
-                        <i class="fab fa-tiktok text-black"></i> TikTok
-                    </a>
-                    
-                    <a href="#" target="_blank" class="dropdown-item">
-                        <i class="fab fa-x-twitter text-slate-900"></i> X (Twitter)
-                    </a>
-                    
-                    <a href="#" target="_blank" class="dropdown-item">
-                        <i class="fab fa-youtube text-red-600"></i> YouTube
-                    </a>
-
-                    <a href="https://wa.me/2213465959" target="_blank" class="dropdown-item">
-                        <i class="fab fa-whatsapp text-green-500"></i> WhatsApp
-                    </a>
+                <div class="dropdown-menu" style="right: 0;">
+                    <a href="#" target="_blank" class="dropdown-item"><i class="fab fa-facebook text-blue-600"></i> Facebook</a>
+                    <a href="#" target="_blank" class="dropdown-item"><i class="fab fa-instagram text-pink-600"></i> Instagram</a>
+                    <a href="#" target="_blank" class="dropdown-item"><i class="fab fa-tiktok text-black"></i> TikTok</a>
+                    <a href="#" target="_blank" class="dropdown-item"><i class="fab fa-youtube text-red-600"></i> YouTube</a>
+                    <a href="#" target="_blank" class="dropdown-item"><i class="fa-brands fa-x-twitter text-[#000000]"></i> Twitter</a>
+                    <hr class="my-2 border-slate-100">
+                    <a href="https://wa.me/2213465959" target="_blank" class="dropdown-item"><i class="fab fa-whatsapp text-green-500"></i> WhatsApp</a>
                 </div>
             </div>
-
         </div>
     </div>
 </nav>
@@ -388,6 +389,66 @@
         </div>
     </section>
 
+    <section id="acabados" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-slate-900 mb-4 italic font-bold">Versatilidad Estética</h2>
+        <p class="text-slate-500 mb-12 uppercase text-[10px] tracking-[0.4em] font-bold">Acabados de Ingeniería BRIQO</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+            <div class="group relative overflow-hidden rounded-3xl shadow-lg h-64 bg-slate-200 flex items-center justify-center">
+                <span class="text-slate-400 italic">Imagen: Acabado Aparente</span>
+                <div class="absolute inset-0 bg-orange-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p class="text-white font-black uppercase">Industrial</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-3xl shadow-lg h-64 bg-slate-200 flex items-center justify-center">
+                <span class="text-slate-400 italic">Imagen: Acabado Pulido</span>
+                <div class="absolute inset-0 bg-orange-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p class="text-white font-black uppercase">Premium</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-3xl shadow-lg h-64 bg-slate-200 flex items-center justify-center">
+                <span class="text-slate-400 italic">Imagen: Pintura Epóxica</span>
+                <div class="absolute inset-0 bg-orange-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p class="text-white font-black uppercase">Color Vivo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="normatividad" class="py-32 bg-white italic border-y border-slate-50">
+    <div class="max-w-6xl mx-auto px-10">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="reveal">
+                <h2 class="text-orange-600 text-[11px] font-black uppercase tracking-[0.8em] mb-6">Blindaje Legal</h2>
+                <h3 class="text-5xl font-black mb-10 text-slate-900 leading-none italic">Sustento <br>Institucional</h3>
+                <div class="space-y-12">
+                    <div class="flex items-start space-x-6 p-10 bg-slate-50 rounded-[3rem] border-r-8 border-orange-500 transition-all hover:bg-white hover:shadow-2xl">
+                        <i class="fas fa-file-contract text-3xl text-orange-600"></i>
+                        <p class="text-sm text-slate-700 font-bold leading-relaxed">
+                            <b class="block text-slate-900 mb-2">NMX-C-404-ONNCCE:</b>
+                            Nuestra dosificación cumple con los estándares nacionales para bloques estructurales de carga regional.
+                        </p>
+                    </div>
+                    <div class="flex items-start space-x-6 p-10 bg-slate-50 rounded-[3rem] border-r-8 border-orange-500 transition-all hover:bg-white hover:shadow-2xl">
+                        <i class="fas fa-shield-virus text-3xl text-orange-600"></i>
+                        <p class="text-sm text-slate-700 font-bold leading-relaxed">
+                            <b class="block text-slate-900 mb-2">NOM-003-SSA1:</b>
+                            Certificamos que el uso de polímeros reciclados no genera emisiones de gases tóxicos bajo radiación térmica Mixteca.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-16 bg-slate-900 rounded-[5rem] text-white shadow-2xl reveal border-t-[15px] border-orange-600">
+                <h4 class="text-orange-500 font-black text-xs uppercase mb-8 tracking-[0.5em]">Dictamen ITSR 2026</h4>
+                <p class="text-3xl font-light leading-snug italic border-l-4 border-orange-600 pl-10 italic">
+                    "El prototipo industrial BRIQO v1.0 presenta una porosidad controlada única que favorece la adherencia del mortero un 15% superior al block convencional."
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
     <section id="especificaciones" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-slate-900 mb-12 text-center italic">Análisis Comparativo</h2>
@@ -422,6 +483,19 @@
     </div>
 </section>
 
+<section id="normas" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-6 text-center italic">
+        <h2 class="text-slate-900 mb-8 font-bold italic">Blindaje Normativo</h2>
+        <div class="p-10 border-2 border-dashed border-orange-200 rounded-[3rem] bg-white">
+            <ul class="space-y-4 text-slate-600">
+                <li><i class="fas fa-check-double text-orange-600 mr-2"></i> Cumplimiento con la Norma <b>NMX-C-404-ONNCCE</b></li>
+                <li><i class="fas fa-check-double text-orange-600 mr-2"></i> Alianza estratégica con el <b>Tecnológico de Tepexi</b></li>
+                <li><i class="fas fa-check-double text-orange-600 mr-2"></i> Certificación de Prototipo Industrial 2026</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
     <section class="py-20 bg-slate-900 text-white rounded-[50px] mx-4 my-8">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h2 class="text-white mb-12 italic">Confort Térmico: BRIQO vs Block</h2>
@@ -441,6 +515,29 @@
             </div>
         </div>
     </section>
+
+    <section id="logistica" class="py-32 bg-white italic">
+    <div class="max-w-7xl mx-auto px-12 text-center">
+        <h2 class="text-slate-900 mb-20 text-5xl font-black uppercase tracking-tighter">Cadena de Suministro</h2>
+        <div class="grid md:grid-cols-3 gap-16 reveal">
+            <div class="p-10 bg-slate-50 rounded-[4rem] transition-all hover:scale-105 hover:bg-white hover:shadow-2xl italic border border-slate-100">
+                <i class="fas fa-truck-fast text-4xl text-orange-600 mb-6"></i>
+                <h4 class="font-black text-xl mb-4 italic">Optimización de Flete</h4>
+                <p class="text-sm text-slate-500 font-light leading-relaxed">Al ser un material 20% más ligero, reducimos el consumo de diésel por viaje en un 15% comparado con el block pesado.</p>
+            </div>
+            <div class="p-10 bg-slate-50 rounded-[4rem] transition-all hover:scale-105 hover:bg-white hover:shadow-2xl italic border border-slate-100">
+                <i class="fas fa-hand-holding-heart text-4xl text-orange-600 mb-6"></i>
+                <h4 class="font-black text-xl mb-4 italic">Empleo Regional</h4>
+                <p class="text-sm text-slate-500 font-light leading-relaxed">Fomentamos la economía local en Ixcaquixtla mediante la red de recolección de polímeros urbanos.</p>
+            </div>
+            <div class="p-10 bg-slate-50 rounded-[4rem] transition-all hover:scale-105 hover:bg-white hover:shadow-2xl italic border border-slate-100">
+                <i class="fas fa-arrows-spin text-4xl text-orange-600 mb-6"></i>
+                <h4 class="font-black text-xl mb-4 italic">Ciclo Cerrado</h4>
+                <p class="text-sm text-slate-500 font-light leading-relaxed">El 100% de la merma de obra puede ser reintegrada a nuestra planta para fabricar nuevos ladrillos.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section class="py-20 bg-slate-50">
         <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -736,6 +833,81 @@
         </div>
     </section>
 
+    <section id="mapa-logistica" class="py-32 bg-[#0a0a0a] text-white relative overflow-hidden italic">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-orange-600/10 blur-[150px] rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    
+    <div class="max-w-7xl mx-auto px-10 relative z-10">
+        <div class="grid lg:grid-cols-5 gap-16 items-center">
+            
+            <div class="lg:col-span-2 reveal">
+                <h2 class="text-orange-500 text-xs font-black uppercase tracking-[0.8em] mb-8">Infraestructura Regional</h2>
+                <h3 class="text-5xl font-black mb-10 leading-tight tracking-tighter uppercase">Nodos de <br> Operación</h3>
+                <p class="text-slate-400 text-lg font-light leading-relaxed mb-10">
+                    Nuestra red logística abarca los puntos neurálgicos de la **Mixteca Poblana**, permitiendo una recolección técnica de polímeros y una distribución eficiente de material estructural.
+                </p>
+                
+                <ul class="space-y-6">
+                    <li class="flex items-center space-x-4 p-5 bg-white/5 rounded-2xl border border-white/10 hover:bg-orange-600/20 transition-all cursor-crosshair">
+                        <div class="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center font-black">01</div>
+                        <div>
+                            <h5 class="font-bold text-sm uppercase">Planta Matriz Tepexi</h5>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest italic">Centro de Transformación ITSR</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center space-x-4 p-5 bg-white/5 rounded-2xl border border-white/10 hover:bg-orange-600/20 transition-all cursor-crosshair">
+                        <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center font-black">02</div>
+                        <div>
+                            <h5 class="font-bold text-sm uppercase">Nodo Ixcaquixtla</h5>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest italic">Acopio de Polímeros Urbanos</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center space-x-4 p-5 bg-white/5 rounded-2xl border border-white/10 hover:bg-orange-600/20 transition-all cursor-crosshair">
+                        <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center font-black">03</div>
+                        <div>
+                            <h5 class="font-bold text-sm uppercase">Punto Molcaxac</h5>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest italic">Distribución Zona Norte</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-3 reveal relative h-[500px] bg-slate-900/50 rounded-[4rem] border border-white/5 shadow-inner">
+                <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(var(--primary-orange) 1px, transparent 1px); background-size: 40px 40px;"></div>
+                
+                <div class="absolute top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+                    <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-[10px] font-black px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        PLANTA ITSR (ACTIVA)
+                    </div>
+                    <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center shadow-[0_0_50px_#ea580c] relative">
+                        <i class="fas fa-industry"></i>
+                        <div class="absolute inset-0 bg-orange-600 rounded-full animate-ping opacity-50"></div>
+                    </div>
+                </div>
+
+                <div class="absolute top-[40%] left-[30%] group cursor-pointer">
+                    <div class="w-6 h-6 bg-slate-700 rounded-full border-2 border-orange-500/50 relative">
+                        <div class="absolute inset-0 bg-orange-500 rounded-full animate-pulse opacity-30"></div>
+                    </div>
+                    <span class="absolute top-8 left-1/2 -translate-x-1/2 text-[9px] font-black text-slate-500 uppercase tracking-widest">Ixcaquixtla</span>
+                </div>
+
+                <div class="absolute top-[30%] left-[70%] group cursor-pointer">
+                    <div class="w-6 h-6 bg-slate-700 rounded-full border-2 border-orange-500/50 relative">
+                        <div class="absolute inset-0 bg-orange-500 rounded-full animate-pulse opacity-30"></div>
+                    </div>
+                    <span class="absolute top-8 left-1/2 -translate-x-1/2 text-[9px] font-black text-slate-500 uppercase tracking-widest">Molcaxac</span>
+                </div>
+
+                <div class="absolute bottom-10 left-10 p-6 bg-black/80 backdrop-blur-md rounded-3xl border border-white/10 italic">
+                    <p class="text-[10px] text-orange-500 font-black uppercase mb-2 italic">Radio de Impacto</p>
+                    <p class="text-2xl font-black italic">120 KM <small class="text-xs">A LA REDONDA</small></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
     <section id="mision" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
             <div class="reveal">
@@ -930,30 +1102,6 @@
         </div>
     </section>
 
-    <section id="garantia" class="py-32 bg-white italic">
-    <div class="max-w-4xl mx-auto px-10 text-center">
-        <div class="reveal">
-            <div class="inline-block p-4 bg-orange-50 rounded-full mb-8">
-                <i class="fas fa-shield-heart text-orange-600 text-4xl"></i>
-            </div>
-            <h2 class="text-slate-900 text-4xl font-black mb-8 uppercase italic">Garantía Estructural BRIQO</h2>
-            <p class="text-xl text-slate-500 font-light leading-relaxed mb-12">
-                Cada millar de ladrillos BRIQO cuenta con un certificado de lote validado en el laboratorio del ITSR, garantizando que el material mantendrá sus propiedades físicas por un periodo mínimo de <b>100 años</b> bajo condiciones climáticas extremas.
-            </p>
-            <div class="flex flex-wrap justify-center gap-6">
-                <span class="px-6 py-2 bg-slate-100 rounded-full text-[10px] font-black uppercase text-slate-500 italic">Pruebas ASTM</span>
-                <span class="px-6 py-2 bg-slate-100 rounded-full text-[10px] font-black uppercase text-slate-500 italic">ISO 14001 Ready</span>
-                <span class="px-6 py-2 bg-slate-100 rounded-full text-[10px] font-black uppercase text-slate-500 italic">Certificación Regional</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <footer class="py-10 text-center text-slate-400 text-xs uppercase tracking-[0.4em]">
-        <p class="font-black text-slate-800 text-lg mb-2 text-menu uppercase italic">BRIQO: Ladrillo + Amor</p>
-        <p>ITSR: Instituto Tecnológico Superior de Tepexi de Rodríguez &copy; 2026</p>
-    </footer>
-
     <a href="https://wa.me/2213465959" class="wa-btn shadow-lg" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -990,7 +1138,130 @@
                 </button>
             </div>
         </div>
+    </div>}
+
+<section id="garantia" class="py-32 bg-white relative overflow-hidden italic">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
+    
+    <div class="max-w-6xl mx-auto px-10">
+        <div class="text-center mb-24 reveal">
+            <h2 class="text-slate-900 text-5xl font-black uppercase tracking-tighter mb-6">Garantía BRIQO</h2>
+            <div class="w-24 h-1.5 bg-orange-600 mx-auto mb-8"></div>
+            <p class="text-slate-400 font-bold uppercase text-xs tracking-[0.6em]">Blindaje técnico de por vida</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 reveal">
+            
+            <div class="p-12 rounded-[4rem] bg-slate-50 border border-slate-100 shadow-sm transition-all hover:shadow-2xl hover:-translate-y-4 duration-500 text-center group">
+                <div class="w-24 h-24 bg-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl text-orange-600 text-5xl">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h4 class="font-black text-xl mb-4 uppercase tracking-tighter text-slate-900">100 Años de Vida</h4>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">
+                    Nuestra matriz de PET no presenta degradación mecánica ante la humedad, asegurando una estructura sólida por un siglo.
+                </p>
+            </div>
+
+            <div class="p-12 rounded-[4rem] bg-slate-50 border border-slate-100 shadow-sm transition-all hover:shadow-2xl hover:-translate-y-4 duration-500 text-center group">
+                <div class="w-24 h-24 bg-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl text-orange-600 text-5xl">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h4 class="font-black text-xl mb-4 uppercase tracking-tighter text-slate-900">Seguro de Resiliencia</h4>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">
+                    Certificamos la absorción de impactos en muros. El material mantiene su cohesión interna sin desprendimientos ante sismos.
+                </p>
+            </div>
+
+            <div class="p-12 rounded-[4rem] bg-slate-50 border border-slate-100 shadow-sm transition-all hover:shadow-2xl hover:-translate-y-4 duration-500 text-center group">
+                <div class="w-24 h-24 bg-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl text-orange-600 text-5xl">
+                    <i class="fa-solid fa-flask-vial"></i>
+                </div>
+                <h4 class="font-black text-xl mb-4 uppercase tracking-tighter text-slate-900">Monitoreo Técnico</h4>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">
+                    Acceso a consultoría técnica gratuita con el ITSR para validar la correcta aplicación en obra regional.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="mt-24 p-12 bg-slate-900 rounded-[5rem] flex flex-col md:flex-row items-center justify-between reveal border-t-8 border-orange-600 shadow-2xl">
+            <div class="mb-8 md:mb-0">
+                <h5 class="text-orange-500 font-black text-3xl uppercase italic tracking-tighter leading-none mb-2">Certificado de Origen</h5>
+                <p class="text-white/40 text-[10px] uppercase font-bold tracking-[0.4em]">Auténtico Ladrillo Ecológico Tepexi®</p>
+            </div>
+            <div class="flex items-center space-x-8">
+                <div class="text-right hidden sm:block">
+                    <p class="text-white font-bold text-sm uppercase italic">Ingeniería Sustentable</p>
+                    <p class="text-white/30 text-[10px] uppercase">Control de Lote 2026-A</p>
+                </div>
+                <div class="w-28 h-28 border-4 border-orange-500 rounded-full flex items-center justify-center font-black text-orange-500 text-[11px] uppercase rotate-12 bg-slate-900 shadow-[0_0_30px_rgba(234,88,12,0.4)]">
+                    <span class="text-center leading-none">BRIQO<br>SEAL</span>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+
+    <footer class="py-10 text-center text-slate-400 text-xs uppercase tracking-[0.4em]">
+        <p class="font-black text-slate-800 text-lg mb-2 text-menu uppercase italic">BRIQO: Ladrillo + Amor</p>
+        <p>ITSR: Instituto Tecnológico Superior de Tepexi de Rodríguez &copy; 2026</p>
+    </footer>
+
+    <footer id="normatividad" class="bg-slate-900 text-slate-400 py-20 px-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            
+            <div class="col-span-1">
+                <span class="text-2xl font-black text-white italic mb-6 block">
+                    BRI<span class="text-orange-500">QO</span>®
+                </span>
+                <p class="text-xs leading-relaxed text-justify uppercase tracking-tighter">
+                    Sistema patentado de construcción modular sustentable. El uso de polímeros reciclados en la mezcla BRIQO cumple con los estándares internacionales de economía circular y reducción de huella de carbono.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Marco Legal</h4>
+                <ul class="text-[10px] space-y-4 uppercase tracking-wider">
+                    <li><a href="#" class="hover:text-orange-500 transition">Aviso de Privacidad Integral</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">Términos y Condiciones de Uso</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">Propiedad Intelectual (IMPI)</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">Licencia de Software VETTRACK v1.0</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Certificaciones</h4>
+                <ul class="text-[10px] space-y-4 uppercase tracking-wider">
+                    <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Norma NOM-001-EDIFICACIÓN</li>
+                    <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Resistencia ASTM-C129</li>
+                    <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Protocolo de Sismo ITSR 2026</li>
+                    <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> ISO 14001: Gestión Ambiental</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Soporte</h4>
+                <p class="text-[11px] mb-4 italic">¿Dudas sobre la dosificación o logística?</p>
+                <a href="mailto:soporte@briqo.com" class="text-orange-500 font-bold text-xs hover:underline uppercase">ingenieria@briqo.com</a>
+                <div class="mt-6 flex space-x-4 text-xl">
+                    <i class="fab fa-linkedin-in hover:text-white cursor-pointer"></i>
+                    <i class="fab fa-github hover:text-white cursor-pointer"></i>
+                    <i class="fas fa-envelope-open-text hover:text-white cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-800 pt-10 text-[9px] uppercase tracking-[0.1em] text-center leading-relaxed">
+            <p class="max-w-4xl mx-auto">
+                DESCARGO DE RESPONSABILIDAD: Los cálculos presentados en la "Eco-Calculadora Pro" son estimaciones basadas en condiciones estándar de laboratorio. La resistencia final del material puede variar según la calidad del polímero recolectado en la región de Tepexi de Rodríguez y alrededores. BRIQO se reserva el derecho de modificar las especificaciones técnicas sin previo aviso para garantizar la seguridad estructural. Queda estrictamente prohibida la reproducción total o parcial de este código fuente y diseño bajo las leyes de propiedad intelectual vigentes en México. Proyecto desarrollado bajo supervisión académica en UTTECAM 2026.
+            </p>
+            <p class="mt-6 font-bold text-slate-500">
+                © 2026 BRIQO TECH - INGENIERÍA SUSTENTABLE. TODOS LOS DERECHOS RESERVADOS.
+            </p>
+        </div>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>

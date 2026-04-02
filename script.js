@@ -237,3 +237,17 @@ const initVideoScroll = () => {
 };
 
 document.addEventListener('DOMContentLoaded', initVideoScroll);
+
+// --- 9. SOPORTE TÁCTIL (IOS/ANDROID) ---
+document.addEventListener('touchstart', (e) => {
+    const dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(menu => {
+        if (!menu.parentElement.contains(e.target)) {
+            menu.style.display = 'none';
+        }
+    });
+}, {passive: true});
+
+// Ajuste de altura para Safari Mobile (evita el salto de la barra de direcciones)
+const vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);

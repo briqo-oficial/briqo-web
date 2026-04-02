@@ -1,8 +1,21 @@
-/* --- CONFIGURACIÓN BASE --- */
+/* ============================================================
+   BRIQO - CONFIGURACIÓN MAESTRA DE ESTILOS
+   Soporte: iPhone, Android, Tablet y Laptop
+   ============================================================ */
+
 :root {
     --primary: #ea580c;
+    --primary-orange: #ea580c; /* Definida para compatibilidad */
     --dark: #0f172a;
     --accent: #25d366;
+    --glass: rgba(255, 255, 255, 0.95);
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -10,11 +23,32 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: var(--dark);
     overflow-x: hidden;
+    background-color: #ffffff;
 }
 
-/* --- TÍTULOS EN NEGRITAS (FORZADO) --- */
+/* Barra de progreso superior (Efecto Lectura) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary), #fb923c);
+    z-index: 10000;
+    transition: width 0.1s linear;
+}
+
+/* --- TIPOGRAFÍA FORZADA --- */
 h1, h2, h3, h4, h5, h6, b, strong, .font-bold {
     font-weight: 800 !important;
+}
+
+h1 {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -23,170 +57,14 @@ h2 {
     text-align: center;
 }
 
-/* --- NAVEGACIÓN --- */
+/* --- NAVEGACIÓN Y MENÚS (DROPDOWNS) --- */
 .glass {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--glass);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid #f1f5f9;
 }
 
-/* --- HERO & VIDEO --- */
-.hero {
-    background: radial-gradient(circle at top right, #fff7ed, #ffffff);
-    padding: 120px 20px 40px;
-}
-
-.hero h1 {
-    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.video-container {
-    max-width: 800px;
-    margin: 0 auto;
-    aspect-ratio: 16/9;
-    border-radius: 30px;
-    overflow: hidden;
-    border: 8px solid white;
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
-}
-
-/* --- SLIDER ANTES/DESPUÉS --- */
-.before-after-container { position: relative; }
-.before-img { border-right: 2px solid white; }
-.slider { z-index: 10; }
-
-/* --- TARJETAS Y TABLAS --- */
-.card {
-    background: white;
-    border: 1px solid #f1f5f9;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 24px;
-}
-
-.card:hover {
-    transform: translateY(-12px);
-    border-color: var(--primary);
-    box-shadow: 0 20px 30px -10px rgba(234, 88, 12, 0.15);
-}
-
-table thead th {
-    background-color: var(--dark);
-    color: white !important;
-    padding: 20px;
-}
-
-/* --- CERTIFICADO Y SELLOS --- */
-#areaDescarga {
-    background-image: url('https://www.transparenttextures.com/patterns/paper.png');
-}
-
-.sello-itsr {
-    border: 3px double var(--primary);
-    padding: 8px 15px;
-    transform: rotate(12deg);
-}
-
-.sello-brillo {
-    position: relative;
-    overflow: hidden;
-}
-
-.sello-brillo::after {
-    content: '';
-    position: absolute;
-    top: -50%; left: -100%; width: 200%; height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: 0.5s;
-    animation: brillo 3s infinite;
-}
-
-@keyframes brillo {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
-
-/* --- BOTONES Y WHATSAPP --- */
-.wa-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--accent);
-    color: white;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    z-index: 1000;
-}
-
-/* --- ANIMACIONES REVEAL --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-/* --- ANIMACIONES TÉRMICAS --- */
-.pulse-red { animation: pulseRed 2s infinite; }
-.pulse-blue { animation: pulseBlue 2s infinite; }
-
-@keyframes pulseRed {
-    0% { transform: scale(1); filter: drop-shadow(0 0 0px #ef4444); }
-    50% { transform: scale(1.1); filter: drop-shadow(0 0 15px #ef4444); }
-    100% { transform: scale(1); filter: drop-shadow(0 0 0px #ef4444); }
-}
-
-@keyframes pulseBlue {
-    0% { transform: scale(1); filter: drop-shadow(0 0 0px #60a5fa); }
-    50% { transform: scale(1.1); filter: drop-shadow(0 0 15px #60a5fa); }
-    100% { transform: scale(1); filter: drop-shadow(0 0 0px #60a5fa); }
-}
-
-/* Badge Glow */
-#badge-icon {
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    border: 2px solid white;
-}
-/* --- EFECTO RELOJ DE DEGRADACIÓN --- */
-.degradacion-card {
-    background: linear-gradient(145deg, #ffffff, #f1f5f9);
-    border-radius: 30px;
-    padding: 2rem;
-    transition: transform 0.3s ease;
-}
-
-.degradacion-card:hover {
-    transform: scale(1.02);
-}
-
-/* Sombra para los testimonios */
-#testimonios .bg-slate-50 {
-    box-shadow: 0 4px 0px rgba(0,0,0,0.02);
-    transition: all 0.3s ease;
-}
-
-#testimonios .bg-slate-50:hover {
-    background: white;
-    box-shadow: 0 20px 40px -10px rgba(234, 88, 12, 0.1);
-    border-color: #ea580c;
-}
-/* Lógica de Dropdowns del Navbar */
 .dropdown {
     position: relative;
     padding: 10px 0;
@@ -194,10 +72,20 @@ table thead th {
 
 .dropdown-menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    background: white;
+    min-width: 240px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    border: 1px solid #f1f5f9;
+    padding: 12px 0;
+    z-index: 1000;
+    max-height: 80vh; 
+    overflow-y: auto;
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.3s ease;
-    z-index: 1000;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -206,7 +94,7 @@ table thead th {
     transform: translateY(0);
 }
 
-.dropdown-nav-item, .dropdown-item {
+.dropdown-item {
     display: flex;
     align-items: center;
     padding: 12px 20px;
@@ -217,117 +105,14 @@ table thead th {
     letter-spacing: 0.1em;
     transition: all 0.2s;
     text-decoration: none;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    border-bottom: 1px solid #f8fafc;
 }
 
-.dropdown-nav-item:hover, .dropdown-item:hover {
-    background-color: #fff7ed;
-    color: #ea580c;
-    padding-left: 25px;
-}
-
-/* --- ESTILOS ADICIONALES PARA VOLUMEN --- */
-table tbody tr:hover {
-    background-color: #fff7ed;
-    transition: background 0.3s ease;
-}
-
-#especificaciones th {
-    border-bottom: 2px solid var(--primary);
-}
-
-.group:hover img {
-    filter: brightness(0.8);
-}
-
-/* Efecto de barra de progreso superior */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 4px;
-    background: var(--primary);
-    z-index: 10000;
-    transition: width 0.1s linear;
-}
-/* EFECTO DE NÚMEROS INCREMENTALES */
-.number-counter {
-    transition: all 2s ease-out;
-}
-/* EFECTO GLOW PARA TARJETAS TÉCNICAS */
-.card-tech-glow {
-    position: relative;
-    transition: all 0.5s ease;
-}
-
-.card-tech-glow:hover {
-    box-shadow: 0 0 30px rgba(234, 88, 12, 0.2);
-    transform: translateY(-15px) scale(1.02);
-}
-
-.card-tech-glow::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    border-radius: inherit;
-    border: 2px solid var(--primary);
-    opacity: 0;
-    transition: all 0.5s ease;
-}
-
-.card-tech-glow:hover::after {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-/* --- LÓGICA DE MENÚS DESPLEGABLES --- */
-.dropdown {
-    position: relative;
-}
-
-/* El menú se oculta por defecto */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    background: white;
-    min-width: 220px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border: 1px solid #f1f5f9;
-    padding: 10px 0;
-    z-index: 1000;
-}
-
-/* Aparece al pasar el mouse por el contenedor padre */
-.dropdown:hover .dropdown-menu {
-    display: block;
-    animation: fadeInMenu 0.3s ease;
-}
-
-@keyframes fadeInMenu {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Estilo de los links dentro del menú */
-.dropdown-item {
-    display: flex;
-    align-items: center;
-    padding: 12px 20px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #64748b;
-    text-transform: uppercase;
-    transition: all 0.2s;
-    text-decoration: none;
-}
+.dropdown-item:last-child { border-bottom: none; }
 
 .dropdown-item:hover {
     background-color: #fff7ed;
-    color: #ea580c;
+    color: var(--primary);
     padding-left: 25px;
 }
 
@@ -337,39 +122,154 @@ body::before {
     width: 20px;
     text-align: center;
 }
-/* ============================================================
-   CONTROL DE ESPACIADO DINÁMICO Y MARCO DE VIDEO
-   ============================================================ */
 
-.spacer-module {
-    height: 100px; /* Espacio extra real en pixeles */
+/* --- HERO & VIDEO (SEPARACIÓN PREMIUM) --- */
+.hero {
+    background: radial-gradient(circle at top right, #fff7ed, #ffffff);
+    padding: 120px 20px 40px;
 }
 
 .video-separation-frame {
-    margin-top: 50px !important; /* Margen base */
+    margin-top: 180px !important; /* Espacio masivo solicitado */
     position: relative;
     z-index: 5;
-}
-
-@media (min-width: 1024px) {
-    .video-separation-frame {
-        margin-top: 180px !important; /* SEPARACIÓN MÁXIMA PARA ESCRITORIO */
-    }
 }
 
 .video-outer-glow {
     position: relative;
     background: radial-gradient(circle, rgba(234, 88, 12, 0.08) 0%, transparent 80%);
-    padding: 30px;
-    border-radius: 80px;
+    padding: 20px;
+    border-radius: 60px;
 }
 
-/* Animación específica para que el video suba suavemente al aparecer */
-.video-separation-frame.active {
-    animation: slideUpVideo 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+.video-container {
+    max-width: 900px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    border-radius: 40px;
+    overflow: hidden;
+    border: 12px solid white;
+    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.3);
 }
 
-@keyframes slideUpVideo {
-    from { opacity: 0; transform: translateY(100px); }
-    to { opacity: 1; transform: translateY(0); }
+/* --- TARJETAS TÉCNICAS --- */
+.card {
+    background: white;
+    border: 1px solid #f1f5f9;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    border-color: var(--primary);
+    box-shadow: 0 30px 50px rgba(234, 88, 12, 0.15);
+}
+
+/* Efecto Glow Industrial */
+.card::after {
+    content: "";
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(234, 88, 12, 0.05) 0%, transparent 70%);
+    opacity: 0; transition: opacity 0.5s ease;
+}
+.card:hover::after { opacity: 1; }
+
+/* --- WHATSAPP PREMIUM (REDISEÑADO) --- */
+.wa-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent);
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    z-index: 5000;
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+    transition: all 0.4s ease;
+}
+
+.wa-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+/* Anillo de pulso sónico */
+.wa-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: shockwave 2.5s infinite;
+    z-index: -1;
+}
+
+@keyframes shockwave {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* --- MAPA DARK LOGÍSTICA --- */
+#mapa-logistica {
+    background-image: linear-gradient(to bottom, #0a0a0a, #0f172a);
+}
+
+.animate-ping {
+    animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping { 75%, 100% { transform: scale(3); opacity: 0; } }
+
+/* --- RESPONSIVIDAD TOTAL --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem !important; }
+    h2 { font-size: 1.8rem !important; }
+
+    .video-separation-frame {
+        margin-top: 60px !important;
+    }
+
+    .video-container {
+        border-radius: 20px;
+        border-width: 6px;
+    }
+
+    /* Forzar rejillas a 1 columna en móvil */
+    .grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        gap: 20px !important;
+    }
+
+    .dropdown-menu {
+        min-width: 90vw;
+        position: fixed;
+        left: 5vw;
+        top: 70px;
+    }
+}
+
+/* Animaciones Reveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- ESTILOS DE CALCULADORA --- */
+#bar-pet, #bar-uni {
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* --- OPTIMIZACIÓN DE FLUIDEZ MÓVIL --- */
+@media (max-width: 768px) {
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+    .reveal {
+        transition: all 0.5s ease-out; /* Animaciones más rápidas en móvil */
+    }
 }
