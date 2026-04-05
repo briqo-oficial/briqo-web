@@ -1,275 +1,160 @@
-/* ============================================================
-   BRIQO - CONFIGURACIÓN MAESTRA DE ESTILOS
-   Soporte: iPhone, Android, Tablet y Laptop
-   ============================================================ */
-
-:root {
-    --primary: #ea580c;
-    --primary-orange: #ea580c; /* Definida para compatibilidad */
-    --dark: #0f172a;
-    --accent: #25d366;
-    --glass: rgba(255, 255, 255, 0.95);
-}
-
-/* --- RESET & BASE --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilos Base */
 body {
-    scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    color: var(--dark);
+    scroll-behavior: smooth;
     overflow-x: hidden;
-    background-color: #ffffff;
 }
 
-/* Barra de progreso superior (Efecto Lectura) */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 5px;
-    background: linear-gradient(to right, var(--primary), #fb923c);
-    z-index: 10000;
-    transition: width 0.1s linear;
-}
-
-/* --- TIPOGRAFÍA FORZADA --- */
-h1, h2, h3, h4, h5, h6, b, strong, .font-bold {
-    font-weight: 800 !important;
-}
-
-h1 {
-    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-/* --- NAVEGACIÓN Y MENÚS (DROPDOWNS) --- */
+/* Efecto Glass en Nav */
 .glass {
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid #f1f5f9;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.dropdown {
-    position: relative;
-    padding: 10px 0;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    background: white;
-    min-width: 240px;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-    border: 1px solid #f1f5f9;
-    padding: 12px 0;
-    z-index: 1000;
-    max-height: 80vh; 
-    overflow-y: auto;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
+/* Estilos de los Dropdowns */
 .dropdown-item {
     display: flex;
     align-items: center;
-    padding: 12px 20px;
-    color: #64748b;
-    font-size: 11px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.75rem;
     font-weight: 700;
+    color: #475569; /* slate-600 */
+    transition: all 0.3s;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: all 0.2s;
-    text-decoration: none;
-    border-bottom: 1px solid #f8fafc;
-}
-
-.dropdown-item:last-child { border-bottom: none; }
-
-.dropdown-item:hover {
-    background-color: #fff7ed;
-    color: var(--primary);
-    padding-left: 25px;
+    letter-spacing: 0.05em;
 }
 
 .dropdown-item i {
-    margin-right: 12px;
-    font-size: 16px;
     width: 20px;
-    text-align: center;
+    margin-right: 12px;
+    font-size: 0.9rem;
 }
 
-/* --- HERO & VIDEO (SEPARACIÓN PREMIUM) --- */
-.hero {
-    background: radial-gradient(circle at top right, #fff7ed, #ffffff);
-    padding: 120px 20px 40px;
-}
-
-.video-separation-frame {
-    margin-top: 180px !important; /* Espacio masivo solicitado */
-    position: relative;
-    z-index: 5;
-}
-
-.video-outer-glow {
-    position: relative;
-    background: radial-gradient(circle, rgba(234, 88, 12, 0.08) 0%, transparent 80%);
-    padding: 20px;
-    border-radius: 60px;
-}
-
-.video-container {
-    max-width: 900px;
-    margin: 0 auto;
-    aspect-ratio: 16/9;
-    border-radius: 40px;
-    overflow: hidden;
-    border: 12px solid white;
-    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.3);
-}
-
-/* --- TARJETAS TÉCNICAS --- */
-.card {
-    background: white;
-    border: 1px solid #f1f5f9;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 24px;
-    position: relative;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-12px);
-    border-color: var(--primary);
-    box-shadow: 0 30px 50px rgba(234, 88, 12, 0.15);
-}
-
-/* Efecto Glow Industrial */
-.card::after {
-    content: "";
-    position: absolute;
-    top: -50%; left: -50%; width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(234, 88, 12, 0.05) 0%, transparent 70%);
-    opacity: 0; transition: opacity 0.5s ease;
-}
-.card:hover::after { opacity: 1; }
-
-/* --- WHATSAPP PREMIUM (REDISEÑADO) --- */
-.wa-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--accent);
-    color: white;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 35px;
-    z-index: 5000;
-    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-    transition: all 0.4s ease;
-}
-
-.wa-btn:hover {
-    transform: scale(1.1) rotate(15deg);
-}
-
-/* Anillo de pulso sónico */
-.wa-btn::before {
-    content: '';
-    position: absolute;
-    width: 100%; height: 100%;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: shockwave 2.5s infinite;
-    z-index: -1;
-}
-
-@keyframes shockwave {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(2.2); opacity: 0; }
-}
-
-/* --- MAPA DARK LOGÍSTICA --- */
-#mapa-logistica {
-    background-image: linear-gradient(to bottom, #0a0a0a, #0f172a);
-}
-
-.animate-ping {
-    animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@keyframes ping { 75%, 100% { transform: scale(3); opacity: 0; } }
-
-/* --- RESPONSIVIDAD TOTAL --- */
-@media (max-width: 768px) {
-    h1 { font-size: 2.2rem !important; }
-    h2 { font-size: 1.8rem !important; }
-
-    .video-separation-frame {
-        margin-top: 60px !important;
-    }
-
-    .video-container {
-        border-radius: 20px;
-        border-width: 6px;
-    }
-
-    /* Forzar rejillas a 1 columna en móvil */
-    .grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-        gap: 20px !important;
-    }
-
-    .dropdown-menu {
-        min-width: 90vw;
-        position: fixed;
-        left: 5vw;
-        top: 70px;
-    }
+.dropdown-item:hover {
+    background-color: #f8fafc;
+    color: #16a34a; /* green-600 */
+    padding-left: 2rem;
 }
 
 /* Animaciones Reveal */
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
-
-/* --- ESTILOS DE CALCULADORA --- */
-#bar-pet, #bar-uni {
-    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
-/* --- OPTIMIZACIÓN DE FLUIDEZ MÓVIL --- */
-@media (max-width: 768px) {
-    * {
-        -webkit-overflow-scrolling: touch;
-    }
-    .reveal {
-        transition: all 0.5s ease-out; /* Animaciones más rápidas en móvil */
-    }
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Hover de video */
+.video-container {
+    transition: transform 0.6s ease;
+}
+.video-container:hover {
+    transform: translateY(-10px);
+}
+/* EFECTOS EXTRA PARA QUE SE VEA BIEN */
+
+/* Animación de pulso para iconos verdes */
+.pulse-green {
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
+
+/* Efecto de borde brillante para las tarjetas */
+.card-glow:hover {
+    box-shadow: 0 20px 40px -10px rgba(22, 163, 74, 0.3);
+    border-color: #16a34a;
+}
+
+/* Scrollbar personalizado verde */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+    background: #16a34a;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #15803d;
+}
+/* Estilo para los inputs de la calculadora */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* Efecto de Vidrio para el contenedor del video */
+.video-outer-glow {
+    box-shadow: 0 0 80px -10px rgba(22, 163, 74, 0.2);
+}
+
+/* Animación para el botón de WhatsApp */
+.pulse-green {
+    animation: pulse-green-btn 2s infinite;
+}
+
+@keyframes pulse-green-btn {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+/* Asegura que al dar clic en el menú, la sección no quede tapada por la barra de navegación */
+html {
+    scroll-padding-top: 100px; /* Ajusta este valor según la altura de tu nav */
+}
+
+/* Efecto de brillo sutil para la imagen del logo */
+.logo-img-glow {
+    filter: drop-shadow(0 0 5px rgba(22, 163, 74, 0.2));
+}
+
+/* Estilo para los ítems del menú de acceso directo */
+.dropdown-item {
+    cursor: pointer;
+    border-left: 4px solid transparent;
+}
+
+.dropdown-item:hover {
+    border-left: 4px solid #16a34a; /* Línea verde al pasar el mouse */
+    background: linear-gradient(to right, #f0fdf4, #ffffff);
+}
+/* FAQ Interactivo */
+.faq-item.active {
+    border-color: #16a34a; /* verde */
+    background: #f0fdf4;
+}
+
+.faq-item.active p {
+    display: block;
+}
+
+.faq-item.active i {
+    transform: rotate(45deg);
+    color: #ef4444; /* rojo al cerrar */
+}
+
+/* Efecto de cristal para la ficha técnica */
+#especificaciones .bg-slate-50 {
+    transition: all 0.4s ease;
+}
+
+#especificaciones .bg-slate-50:hover {
+    background: #ffffff;
+    transform: translateX(10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }

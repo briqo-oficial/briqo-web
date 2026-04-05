@@ -1,253 +1,119 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. OBSERVADOR DE ANIMACIONES (REVEAL) ---
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-
-    // --- 2. LÓGICA DE LA CALCULADORA PRO (Materiales e Impacto) ---
-    const inputMetros = document.getElementById('metros');
-    
-    if (inputMetros) {
-        inputMetros.addEventListener('input', (e) => {
-            const m2 = parseFloat(e.target.value) || 0;
-            
-            // Cálculos de Impacto Ambiental
-            const totalPetBotellas = Math.round(m2 * 1800);
-            const totalCo2 = Math.round(m2 * 60);
-
-            // Cálculos de Composición de Materiales (KG)
-            const petKg = (m2 * 12.5).toFixed(1);
-            const uniKg = (m2 * 2.1).toFixed(1);
-
-            // Actualizar Textos de Impacto
-            document.getElementById('res-pet').innerText = totalPetBotellas.toLocaleString();
-            document.getElementById('res-co2').innerText = totalCo2.toLocaleString();
-
-            // Actualizar Textos de Materiales
-            document.getElementById('mat-pet').innerText = petKg;
-            document.getElementById('mat-uni').innerText = uniKg;
-
-            // Actualizar Barras de Progreso Visual
-            // El máximo de la barra es 1000kg para referencia visual
-            document.getElementById('bar-pet').style.width = Math.min((petKg / 10), 100) + '%';
-            document.getElementById('bar-uni').style.width = Math.min((uniKg / 2), 100) + '%';
-
-            // Actualizar Logros y lanzar Confeti
-            actualizarLogros(m2);
-        });
-    }
-
-
-    // --- 3. SISTEMA DE LOGROS Y CELEBRACIÓN ---
-    let metaMaximaAlcanzada = false;
-
-    function actualizarLogros(m2) {
-        const icon = document.getElementById('badge-icon');
-        const titulo = document.getElementById('badge-titulo');
-        const desc = document.getElementById('badge-desc');
-
-        if (m2 > 200) {
-            icon.innerText = "🌍";
-            icon.style.backgroundColor = "#dcfce7";
-            titulo.innerText = "Héroe de la Mixteca";
-            desc.innerText = "Tu impacto equivale a 10 años de reciclaje.";
-            
-            // Disparar confeti solo la primera vez que llega a la meta
-            if (!metaMaximaAlcanzada) {
-                celebrarImpacto();
-                metaMaximaAlcanzada = true;
-            }
-        } else if (m2 > 50) {
-            icon.innerText = "🏠";
-            icon.style.backgroundColor = "#ffedd5";
-            titulo.innerText = "Constructor Verde";
-            desc.innerText = "Has limpiado una barranca completa.";
-            metaMaximaAlcanzada = false;
-        } else {
-            icon.innerText = "🌱";
-            icon.style.backgroundColor = "#f1f5f9";
-            titulo.innerText = "Eco-Semilla";
-            desc.innerText = "Has comenzado a limpiar Tepexi.";
-            metaMaximaAlcanzada = false;
-        }
-    }
-
-    function celebrarImpacto() {
-        const end = Date.now() + (3 * 1000);
-        const colors = ['#ea580c', '#22c55e', '#ffffff'];
-
-        (function frame() {
-            confetti({
-                particleCount: 3,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 },
-                colors: colors
-            });
-            confetti({
-                particleCount: 3,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 },
-                colors: colors
-            });
-
-            if (Date.now() < end) {
-                requestAnimationFrame(frame);
-            }
-        }());
-    }
-
-
-    // --- 4. SLIDER ANTES / DESPUÉS ---
-    const impactSlider = document.getElementById('impactSlider');
-    if(impactSlider) {
-        impactSlider.addEventListener('input', (e) => {
-            const val = e.target.value;
-            document.querySelector('.before-img').style.width = val + '%';
-            document.querySelector('.slider-line').style.left = val + '%';
-        });
-    }
-
-
-    // --- 5. NAVBAR SCROLL EFFECT ---
-    window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 50) {
-            nav.classList.add('shadow-lg');
-            nav.style.padding = "5px 0";
-        } else {
-            nav.classList.remove('shadow-lg');
-            nav.style.padding = "15px 0";
-        }
-    });
-});
-
-
-// --- 6. FUNCIONES GLOBALES (ACCESIBLES DESDE EL HTML) ---
-
-function toggleFaq(el) {
-    const answer = el.querySelector('.faq-answer');
-    const icon = el.querySelector('i');
-    const isOpen = answer.style.display === 'block';
-    
-    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-    document.querySelectorAll('.faq-item i').forEach(i => i.classList.replace('fa-minus', 'fa-plus'));
-
-    if (!isOpen) {
-        answer.style.display = 'block';
-        icon.classList.replace('fa-plus', 'fa-minus');
-    }
-}
-
-function generarCertificado() {
-    const pet = document.getElementById('res-pet').innerText;
-    if (pet === "0") {
-        alert("Por favor, ingresa los metros cuadrados en la calculadora para generar tu certificado.");
-        return;
-    }
-    document.getElementById('cert-pet').innerText = pet;
-    document.getElementById('impactCertificate').classList.remove('hidden');
-}
-
-function descargarCertificado() {
-    const area = document.getElementById('areaDescarga');
-    const btn = event.currentTarget;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Procesando...';
-
-    html2canvas(area, { 
-        scale: 2,
-        backgroundColor: "#ffffff" 
-    }).then(canvas => {
-        const link = document.createElement('a');
-        link.download = `Certificado-BRIQO-${Date.now()}.png`;
-        link.href = canvas.toDataURL("image/png");
-        link.click();
-        btn.innerHTML = '<i class="fas fa-download mr-2"></i> Descargar PNG';
-    });
-}
-
-function enviarWhatsApp() {
-    const nombre = document.getElementById('nombre').value;
-    const metros = document.getElementById('metros_contar').value;
-    const num = "522213465959"; 
-
-    if(nombre && metros) {
-        const msg = `¡Hola BRIQO! Soy ${nombre}, me interesa una cotización para un proyecto de ${metros} m2 con sus ladrillos ecológicos del Tec de Tepexi.`;
-        window.open(`https://wa.me/${num}?text=${encodeURIComponent(msg)}`, '_blank');
-    } else {
-        alert("Por favor completa tu nombre y los metros cuadrados.");
-    }
-}
-// --- 7. BARRA DE PROGRESO DE LECTURA ---
-window.addEventListener('scroll', () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.styleSheets[0].addRule('body::before', `width: ${scrolled}%`);
-});
-// --- 8. FUNCIÓN PARA ANIMAR NÚMEROS ---
-function animateValue(obj, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    };
-    window.requestAnimationFrame(step);
-}
-
-// Modifica el evento de tu inputMetros para llamar a la animación
-// Ejemplo: animateValue(document.getElementById('res-pet'), 0, totalPet, 1000);
 /**
- * LÓGICA DE CONTROL PARA EL MÓDULO DE VIDEO SEPARADO
- * Este bloque gestiona el comportamiento visual del frame premium
+ * Lógica de Animación al Scroll
  */
-const initVideoScroll = () => {
-    const videoModule = document.querySelector('.video-separation-frame');
+const reveal = () => {
+    const reveals = document.querySelectorAll(".reveal");
     
-    const videoOptions = {
-        threshold: 0.2
-    };
+    reveals.forEach((element) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const revealPoint = 100;
 
-    const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                // Incrementamos la sombra dinámicamente al entrar
-                entry.target.style.filter = "drop-shadow(0 30px 50px rgba(234, 88, 12, 0.2))";
-            }
-        });
-    }, videoOptions);
-
-    if (videoModule) {
-        videoObserver.observe(videoModule);
-    }
+        if (elementTop < windowHeight - revealPoint) {
+            element.classList.add("active");
+        }
+    });
 };
 
-document.addEventListener('DOMContentLoaded', initVideoScroll);
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
 
-// --- 9. SOPORTE TÁCTIL (IOS/ANDROID) ---
-document.addEventListener('touchstart', (e) => {
-    const dropdowns = document.querySelectorAll('.dropdown-menu');
-    dropdowns.forEach(menu => {
-        if (!menu.parentElement.contains(e.target)) {
-            menu.style.display = 'none';
+// Confirmación en consola
+console.log("BRIQO Green Engine: Operativo.");
+/**
+ * Efecto de Parallax suave para el Hero
+ */
+window.addEventListener('scroll', () => {
+    const heroText = document.querySelector('#inicio h1');
+    let scrollValue = window.scrollY;
+    if (heroText) {
+        heroText.style.transform = `translateY(${scrollValue * 0.2}px) skewX(-2deg)`;
+    }
+});
+
+/**
+ * Consola con estilo (Para que vean que hay código profesional detrás)
+ */
+console.log(
+    "%c BRIQO %c PROYECTO ITSR TEPEXI %c 2026 ",
+    "background:#16a34a; color:white; font-weight:bold; padding:4px 8px; border-radius:4px 0 0 4px",
+    "background:#0f172a; color:white; font-weight:bold; padding:4px 8px;",
+    "background:#f1f5f9; color:#0f172a; font-weight:bold; padding:4px 8px; border-radius:0 4px 4px 0"
+);
+/**
+ * Lógica de la Eco-Calculadora
+ * 1 kg de ropa ≈ 3 Ladrillos BRIQO
+ * 50 Ladrillos ≈ 1 Metro cuadrado de muro
+ */
+const kilosInput = document.getElementById('kilosInput');
+const resLadrillos = document.getElementById('resultadoLadrillos');
+const resMuros = document.getElementById('resultadoMuros');
+
+if (kilosInput) {
+    kilosInput.addEventListener('input', (e) => {
+        const kilos = e.target.value;
+        if (kilos > 0) {
+            const ladrillos = Math.round(kilos * 3.5); // Factor de conversión textil
+            const metros = (ladrillos / 48).toFixed(1);
+            
+            resLadrillos.innerText = ladrillos;
+            resMuros.innerText = metros;
+        } else {
+            resLadrillos.innerText = '0';
+            resMuros.innerText = '0';
         }
     });
-}, {passive: true});
+}
 
-// Ajuste de altura para Safari Mobile (evita el salto de la barra de direcciones)
-const vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+/**
+ * Notificación de bienvenida al usuario
+ */
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        console.log("%c INFO: Sistema de Cálculo BRIQO v2.1 Activo ", "color: #16a34a; font-weight: bold;");
+    }, 2000);
+});
+/**
+ * Al hacer clic en un enlace del menú, el menú se "oculta" 
+ * (útil si después agregas una versión móvil con botón)
+ */
+document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', () => {
+        // Esto ayuda a que la transición de scroll se sienta más limpia
+        console.log("Navegando a: " + item.innerText);
+    });
+});
+
+// Cambiar el fondo del Nav cuando se hace scroll para que el logo resalte más
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.classList.add('shadow-lg');
+        nav.style.height = "70px"; // Se hace un poco más delgada al bajar
+    } else {
+        nav.classList.remove('shadow-lg');
+        nav.style.height = "80px";
+    }
+});
+/**
+ * Lógica para el Acordeón de FAQ
+ */
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+        // Alternar clase activa
+        item.classList.toggle('active');
+        
+        // Animación de icono
+        const icon = item.querySelector('i');
+        if (item.classList.contains('active')) {
+            console.log("FAQ Abierto: " + item.innerText.split('\n')[0]);
+        }
+    });
+});
+
+/**
+ * Notificación de Validación Técnica
+ */
+window.addEventListener('load', () => {
+    console.log("%c NORMAS: NMX-C-404-ONNCCE CUMPLIDA ", "background: #16a34a; color: white; border-radius: 5px; padding: 2px 5px;");
+});
