@@ -158,3 +158,79 @@ html {
     transform: translateX(10px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
+/* Efecto de Desenfoque en el Fondo de Galería */
+.group:hover img {
+    filter: blur(2px) grayscale(50%);
+}
+
+/* Decoración para los nombres del equipo */
+#equipo h5 {
+    letter-spacing: -1px;
+}
+
+/* Ajuste de color para links de redes en el footer */
+footer i:hover {
+    color: #16a34a;
+    transform: translateY(-3px);
+    transition: 0.3s;
+}
+
+/* Scroll lateral para móviles en la tabla de especificaciones si fuera necesario */
+@media (max-width: 768px) {
+    .grid {
+        gap: 2rem;
+    }
+}
+/* Animación de entrada del certificado */
+#modalCertificado.active {
+    display: flex;
+    animation: fadeIn 0.5s ease;
+}
+
+#modalCertificado .max-w-2xl {
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+#modalCertificado.active .max-w-2xl {
+    transform: scale(1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Marca de agua sutil para el certificado */
+#areaCertificado::before {
+    content: 'BRIQO';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 150px;
+    font-weight: 900;
+    color: rgba(0,0,0,0.02);
+    z-index: 0;
+    pointer-events: none;
+}
+/* Estilo de fuentes de ingeniería */
+.font-menu {
+    letter-spacing: 0.3em;
+}
+
+/* Efecto de pulso para la sección de seguridad */
+.animate-pulse {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-slow {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(1.1); }
+}
+
+/* Bordes decorativos para el modo oscuro */
+.bg-slate-950 {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}

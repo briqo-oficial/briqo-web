@@ -6,6 +6,7 @@
     <title>BRIQO | Ingeniería Sustentable ITSR</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -262,23 +263,22 @@
         </div>
     </section>
 
-    <section id="faq" class="py-24 bg-slate-50">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-center text-4xl font-black italic uppercase mb-12">Dudas Técnicas</h2>
-            <div class="space-y-4">
-                <div class="faq-item bg-white p-6 rounded-3xl shadow-sm border border-slate-100 cursor-pointer transition-all hover:border-green-300">
-                    <div class="flex justify-between items-center font-bold text-slate-700 uppercase text-[11px] tracking-widest">
-                        <span>¿Es resistente al fuego?</span>
-                        <i class="fas fa-plus text-green-600"></i>
-                    </div>
-                    <p class="hidden mt-4 text-sm text-slate-500 italic">Sí. El material textil está encapsulado en una matriz inorgánica que actúa como retardante, cumpliendo con normas de seguridad civil.</p>
+    <section class="py-24 bg-slate-950 text-white italic">
+        <div class="max-w-6xl mx-auto px-10 grid md:grid-cols-2 gap-20 items-center">
+            <div class="reveal">
+                <h2 class="text-green-500 text-xs font-black uppercase tracking-[0.6em] mb-6 font-menu">Seguridad Estructural</h2>
+                <h3 class="text-4xl font-black mb-8 italic uppercase tracking-tighter">Resiliencia Sísmica</h3>
+                <p class="text-slate-400 text-lg font-light leading-relaxed mb-8">
+                    A diferencia del concreto rígido, la matriz de <b>BRIQO</b> posee un coeficiente de elasticidad superior. En sismos, las fibras textiles absorben la energía vibratoria, reduciendo la propagación de grietas críticas.
+                </p>
+                <div class="inline-flex items-center space-x-4 p-4 bg-white/5 rounded-2xl border border-white/10">
+                    <i class="fas fa-house-chimney-crack text-green-500 text-2xl"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">Apto para Zona Sísmica Z-3</span>
                 </div>
-                <div class="faq-item bg-white p-6 rounded-3xl shadow-sm border border-slate-100 cursor-pointer transition-all hover:border-green-300">
-                    <div class="flex justify-between items-center font-bold text-slate-700 uppercase text-[11px] tracking-widest">
-                        <span>¿Cuál es su tiempo de vida?</span>
-                        <i class="fas fa-plus text-green-600"></i>
-                    </div>
-                    <p class="hidden mt-4 text-sm text-slate-500 italic">Estimamos una durabilidad superior a los 100 años, ya que el PET y las fibras sintéticas no se degradan con la humedad del suelo.</p>
+            </div>
+            <div class="relative reveal flex justify-center">
+                <div class="w-64 h-64 bg-green-600/20 rounded-full flex items-center justify-center animate-pulse">
+                    <i class="fas fa-shield-heart text-9xl text-green-500 shadow-2xl"></i>
                 </div>
             </div>
         </div>
@@ -319,15 +319,98 @@
         </div>
     </section>
 
-    <section class="py-20 bg-slate-900 text-white text-center italic">
-        <div class="max-w-4xl mx-auto px-10 reveal">
-            <h3 class="text-3xl font-black mb-8">¿Listo para construir el futuro?</h3>
-            <button onclick="alert('Generando Certificado de Huella Positiva... ¡Revisa tu consola!')" class="bg-green-600 hover:bg-white hover:text-green-600 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest transition-all shadow-2xl pulse-green">
-                Obtener Certificado BRIQO
-            </button>
+        <section id="dosificacion" class="py-32 bg-white italic">
+        <div class="max-w-6xl mx-auto px-10">
+            <h2 class="text-slate-900 text-center text-5xl font-black mb-20 uppercase tracking-tighter">Análisis de Componentes</h2>
+            <div class="grid md:grid-cols-4 gap-8 reveal">
+                <div class="p-8 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all hover:bg-green-50 hover:border-green-200">
+                    <i class="fas fa-tshirt text-green-600 text-3xl mb-6"></i>
+                    <h4 class="font-black text-sm uppercase mb-4">Fibra Textil</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed italic">Aporta flexibilidad molecular y actúa como un amortiguador térmico natural dentro de la mezcla.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all hover:bg-green-50 hover:border-green-200">
+                    <i class="fas fa-bottle-water text-green-600 text-3xl mb-6"></i>
+                    <h4 class="font-black text-sm uppercase mb-4">Polímero PET</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed italic">Funciona como el agente aglutinante principal, otorgando impermeabilidad total al ladrillo.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all hover:bg-green-50 hover:border-green-200">
+                    <i class="fas fa-cubes text-green-600 text-3xl mb-6"></i>
+                    <h4 class="font-black text-sm uppercase mb-4">Árido Sílico</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed italic">Proporciona la dureza estructural necesaria para soportar muros de carga de hasta dos niveles.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-[3rem] border border-slate-100 transition-all hover:bg-green-50 hover:border-green-200">
+                    <i class="fas fa-vial text-green-600 text-3xl mb-6"></i>
+                    <h4 class="font-black text-sm uppercase mb-4">Aditivo B-26</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed italic">Garantiza la unión química entre el plástico y el cemento para evitar desprendimientos.</p>
+                </div>
+            </div>
         </div>
     </section>
 
+        <section id="faq" class="py-24 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-center text-4xl font-black italic uppercase mb-12">Dudas Técnicas</h2>
+            <div class="space-y-4">
+                <div class="faq-item bg-white p-6 rounded-3xl shadow-sm border border-slate-100 cursor-pointer transition-all hover:border-green-300">
+                    <div class="flex justify-between items-center font-bold text-slate-700 uppercase text-[11px] tracking-widest">
+                        <span>¿Es resistente al fuego?</span>
+                        <i class="fas fa-plus text-green-600"></i>
+                    </div>
+                    <p class="hidden mt-4 text-sm text-slate-500 italic">Sí. El material textil está encapsulado en una matriz inorgánica que actúa como retardante, cumpliendo con normas de seguridad civil.</p>
+                </div>
+                <div class="faq-item bg-white p-6 rounded-3xl shadow-sm border border-slate-100 cursor-pointer transition-all hover:border-green-300">
+                    <div class="flex justify-between items-center font-bold text-slate-700 uppercase text-[11px] tracking-widest">
+                        <span>¿Cuál es su tiempo de vida?</span>
+                        <i class="fas fa-plus text-green-600"></i>
+                    </div>
+                    <p class="hidden mt-4 text-sm text-slate-500 italic">Estimamos una durabilidad superior a los 100 años, ya que el PET y las fibras sintéticas no se degradan con la humedad del suelo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white text-center italic">
+        <div class="max-w-4xl mx-auto px-10 reveal">
+            <h3 class="text-3xl font-black mb-8">¿Listo para construir el futuro?</h3>
+<button onclick="mostrarCertificado()" class="bg-green-600 hover:bg-white hover:text-green-600 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest transition-all shadow-2xl pulse-green">
+    Obtener Certificado BRIQO
+</button>
+        </div>
+    </section>
+
+    <div id="modalCertificado" class="fixed inset-0 z-[10000] hidden flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-sm">
+        <div class="max-w-2xl w-full bg-white rounded-none shadow-2xl overflow-hidden border-[16px] border-green-50 relative p-12 text-center" id="areaCertificado">
+            
+            <div class="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-green-600"></div>
+            <div class="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-green-600"></div>
+
+            <i class="fas fa-leaf text-5xl text-green-600 mb-6"></i>
+            
+            <h4 class="text-[10px] uppercase tracking-[0.5em] font-black text-slate-400 mb-2">Reconocimiento a la Sustentabilidad</h4>
+            <h2 class="text-4xl font-black italic mb-8 text-slate-900 uppercase tracking-tighter">Certificado BRIQO</h2>
+            
+            <p class="text-lg text-slate-600 mb-10 leading-relaxed">
+                Se otorga el presente reconocimiento por contribuir activamente a la <br>
+                <span class="font-bold text-slate-900 italic underline decoration-green-500">Economía Circular de la Mixteca Poblana</span> <br>
+                al transformar residuos textiles en materiales de construcción de alto impacto.
+            </p>
+
+            <div class="flex justify-between items-center mt-16 pt-8 border-t border-slate-100">
+                <div class="text-left">
+                    <p class="text-[9px] font-bold uppercase text-slate-400">Validación de Ingeniería</p>
+                    <p class="text-xs font-black text-slate-800 italic uppercase">ITSR Tepexi de Rodríguez</p>
+                </div>
+                
+                <div class="w-24 h-24 rounded-full border-4 border-double border-green-600 flex items-center justify-center text-center rotate-12">
+                    <span class="text-[10px] font-black text-green-600 leading-none">SELLO DE<br>CALIDAD<br>2026</span>
+                </div>
+            </div>
+
+            <button onclick="cerrarCertificado()" class="mt-12 text-slate-400 hover:text-red-500 text-[10px] uppercase font-bold tracking-widest transition-colors">
+                [ Cerrar Documento ]
+            </button>
+        </div>
+    </div>
     <a href="https://wa.me/2213465959" class="fixed bottom-8 right-8 z-[9000] w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform pulse-green">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -338,5 +421,6 @@
     </footer>
 
     <script src="script.js"></script>
+    
 </body>
 </html>

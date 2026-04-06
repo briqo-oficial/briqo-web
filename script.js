@@ -117,3 +117,62 @@ document.querySelectorAll('.faq-item').forEach(item => {
 window.addEventListener('load', () => {
     console.log("%c NORMAS: NMX-C-404-ONNCCE CUMPLIDA ", "background: #16a34a; color: white; border-radius: 5px; padding: 2px 5px;");
 });
+// Función para abrir el certificado
+function mostrarCertificado() {
+    const modal = document.getElementById('modalCertificado');
+    if (modal) {
+        modal.classList.remove('hidden');
+        // Un pequeño delay para que la animación de entrada (CSS) se note
+        setTimeout(() => {
+            modal.classList.add('active');
+        }, 10);
+    }
+}
+
+// Función para cerrar el certificado
+function cerrarCertificado() {
+    const modal = document.getElementById('modalCertificado');
+    if (modal) {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 400); // Tiempo que coincide con la transición de CSS
+    }
+}
+function mostrarCertificado() {
+    const modal = document.getElementById('modalCertificado');
+    if (modal) {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.add('active');
+            // ¡Lanzar confeti verde y blanco!
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#16a34a', '#ffffff', '#000000']
+            });
+        }, 10);
+    }
+}
+/**
+ * Efecto de Hover persistente en componentes de dosificación
+ */
+document.querySelectorAll('#dosificacion div').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.querySelector('i').classList.add('fa-bounce');
+        setTimeout(() => {
+            card.querySelector('i').classList.remove('fa-bounce');
+        }, 1000);
+    });
+});
+
+/**
+ * Log de Validación Estructural para la presentación
+ */
+console.log(
+    "%c ESTRUCTURA %c Coeficiente de elasticidad: 0.45 %c SEGURO ",
+    "background:#16a34a; color:white; font-weight:bold; padding:4px 8px; border-radius:4px 0 0 4px",
+    "background:#334155; color:white; font-weight:bold; padding:4px 8px;",
+    "background:#f1f5f9; color:#16a34a; font-weight:bold; padding:4px 8px; border-radius:0 4px 4px 0"
+);
