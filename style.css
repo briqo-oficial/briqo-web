@@ -337,3 +337,19 @@ footer img {
     filter: grayscale(100%) brightness(200%);
     opacity: 0.8;
 }
+/* Cursor parpadeante */
+.cursor-escribiendo {
+    display: inline-block;
+    margin-left: 2px;
+    animation: parpadeo 0.8s infinite;
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Para ocultar el cursor cuando termine */
+.ocultar-cursor {
+    display: none;
+}

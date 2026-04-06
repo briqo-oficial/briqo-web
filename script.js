@@ -263,3 +263,32 @@ console.log("%c SUCCESS %c Proyecto BRIQO Tepexi Finalizado %c v3.0 ",
     "background:#16a34a; color:white; font-weight:bold; padding:4px 8px; border-radius:4px 0 0 4px",
     "background:#000; color:white; font-weight:bold; padding:4px 8px;",
     "background:#f1f5f9; color:#000; font-weight:bold; padding:4px 8px; border-radius:0 4px 4px 0");
+
+/**
+ * Efecto Typewriter solo para la frase del Hero
+ */
+const fraseElemento = document.getElementById('frase-hero');
+const cursor = document.querySelector('.cursor-escribiendo');
+const textoFrase = '"Transformando el residuo textil en muros de vida para la Mixteca Poblana."';
+
+if (fraseElemento) {
+    let indice = 0;
+    const velocidad = 50; // Velocidad de escritura (ms)
+
+    function escribirFrase() {
+        if (indice < textoFrase.length) {
+            fraseElemento.innerHTML += textoFrase.charAt(indice);
+            indice++;
+            setTimeout(escribirFrase, velocidad);
+        } else {
+            // Cuando termina, el cursor deja de parpadear o se oculta
+            if(cursor) cursor.classList.add('ocultar-cursor');
+            console.log("%c INFO: Frase de bienvenida completada. ", "color: #16a34a; font-weight: bold;");
+        }
+    }
+
+    // Iniciar cuando cargue la página con un pequeño delay
+    window.addEventListener('load', () => {
+        setTimeout(escribirFrase, 800); 
+    });
+}
