@@ -234,3 +234,106 @@ footer i:hover {
     border-top: 1px solid rgba(255,255,255,0.05);
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
+/* Tabla con bordes redondeados pro */
+table {
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+/* Efecto de degradado sutil para el Roadmap */
+.bg-green-600.animate-ping {
+    background-color: rgba(22, 163, 74, 0.4);
+}
+
+/* Marca de agua institucional para secciones blancas */
+#comparativa::after {
+    content: 'BRIQO ENGINEERING';
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(0,0,0,0.02);
+    z-index: -1;
+    pointer-events: none;
+    transform: rotate(-5deg);
+}
+/* Animación del Sello Giratorio */
+.animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+}
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Mejora visual para los bloques de logística */
+#logistica .p-10:hover i {
+    transform: translateY(-10px) rotate(10deg);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Estilo de la tipografía del footer para que sea más "Legal" */
+footer p {
+    letter-spacing: 0.5em;
+    font-weight: 800;
+}
+/* Efecto de Vidrio para el Laboratorio */
+.backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
+/* Animación de la barra de progreso */
+.reveal.active .bg-green-500 {
+    transition: width 2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+/* Estilo de la cita de testimonios */
+#testimonios p {
+    line-height: 1.8;
+}
+
+/* Sello de "Aprobado por el ITSR" flotante */
+.sello-itsr {
+    position: fixed;
+    top: 50%;
+    right: -50px;
+    transform: rotate(-90deg);
+    background: #16a34a;
+    color: white;
+    padding: 10px 20px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 5000;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+/* Graduación de color para el texto resaltado del final corregido */
+.text-green-500 {
+    background: linear-gradient(to right, #22c55e, #16a34a);
+    -webkit-background-clip: text; /* Para Chrome y Safari */
+    background-clip: text;         /* Propiedad estándar para compatibilidad */
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+/* Efecto de "Glow" para el footer oscuro */
+footer {
+    position: relative;
+    box-shadow: 0 -20px 50px rgba(0,0,0,0.2);
+}
+
+/* Transición para los links del footer con flecha */
+footer ul li a {
+    transition: all 0.3s ease;
+}
+
+/* Estilo para que la imagen del logo en el footer se vea elegante (blanca/gris) */
+footer img {
+    filter: grayscale(100%) brightness(200%);
+    opacity: 0.8;
+}

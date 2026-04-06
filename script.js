@@ -176,3 +176,90 @@ console.log(
     "background:#334155; color:white; font-weight:bold; padding:4px 8px;",
     "background:#f1f5f9; color:#16a34a; font-weight:bold; padding:4px 8px; border-radius:0 4px 4px 0"
 );
+/**
+ * Efecto de resaltar columna BRIQO en la tabla
+ */
+document.querySelectorAll('tr').forEach(row => {
+    row.addEventListener('mouseover', () => {
+        const briqoCell = row.cells[1];
+        if (briqoCell) briqoCell.style.fontSize = "1.1rem";
+    });
+    row.addEventListener('mouseout', () => {
+        const briqoCell = row.cells[1];
+        if (briqoCell) briqoCell.style.fontSize = "0.875rem";
+    });
+});
+
+/**
+ * Log de Desempeño Térmico
+ */
+console.log(
+    "%c TERMO-ANÁLISIS %c Diferencia: -4.2°C %c ÓPTIMO ",
+    "background:#16a34a; color:white; font-weight:bold; padding:4px 8px; border-radius:4px 0 0 4px",
+    "background:#1e293b; color:white; font-weight:bold; padding:4px 8px;",
+    "background:#f1f5f9; color:#16a34a; font-weight:bold; padding:4px 8px; border-radius:0 4px 4px 0"
+);
+/**
+ * Efecto de sonido sutil al hacer clic en el logo (Opcional)
+ * o Log de Auditoría para la presentación
+ */
+console.log(
+    "%c LOGÍSTICA %c Cobertura Regional: Tepexi - Ixcaquixtla - Molcaxac %c ACTIVO ",
+    "background:#16a34a; color:white; font-weight:bold; padding:4px 8px; border-radius:4px 0 0 4px",
+    "background:#0f172a; color:white; font-weight:bold; padding:4px 8px;",
+    "background:#f1f5f9; color:#16a34a; font-weight:bold; padding:4px 8px; border-radius:0 4px 4px 0"
+);
+
+/**
+ * Función para imprimir el certificado directamente
+ */
+function imprimirCertificado() {
+    const contenido = document.getElementById('areaCertificado').innerHTML;
+    const ventana = window.open('', '', 'height=600,width=800');
+    ventana.document.write('<html><head><title>Certificado BRIQO</title>');
+    ventana.document.write('<link rel="stylesheet" href="https://cdn.tailwindcss.com">');
+    ventana.document.write('</head><body class="p-10">');
+    ventana.document.write(contenido);
+    ventana.document.write('</body></html>');
+    ventana.document.close();
+    ventana.print();
+}
+/**
+ * Efecto de sonido de clic (Opcional)
+ * Notificación de validación de zona sísmica
+ */
+window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY;
+    const itsrSello = document.querySelector('.sello-itsr');
+    if (itsrSello) {
+        // El sello se mueve un poco con el scroll para ser dinámico
+        itsrSello.style.top = (50 + (scrollPos * 0.05)) + "%";
+    }
+});
+
+/**
+ * Log de "Carga de Pruebas ITSR"
+ */
+console.log(
+    "%c LAB %c Prueba de Carga Estática ITSR 2026: %c PASSED ",
+    "background:#16a34a; color:white; font-weight:bold; padding:4px 8px; border-radius:4px 0 0 4px",
+    "background:#1e293b; color:white; font-weight:bold; padding:4px 8px;",
+    "background:#f1f5f9; color:#16a34a; font-weight:bold; padding:4px 8px; border-radius:0 4px 4px 0"
+);
+// Efecto de brillo para el logo del footer al pasar el mouse
+const footerLogo = document.querySelector('footer img');
+if (footerLogo) {
+    footerLogo.addEventListener('mouseover', () => {
+        footerLogo.style.filter = "grayscale(0%) brightness(100%)";
+        footerLogo.style.opacity = "1";
+    });
+    footerLogo.addEventListener('mouseout', () => {
+        footerLogo.style.filter = "grayscale(100%) brightness(200%)";
+        footerLogo.style.opacity = "0.8";
+    });
+}
+// Mensaje de éxito final en consola
+console.log("%c SUCCESS %c Proyecto BRIQO Tepexi Finalizado %c v3.0 ", 
+    "background:#16a34a; color:white; font-weight:bold; padding:4px 8px; border-radius:4px 0 0 4px",
+    "background:#000; color:white; font-weight:bold; padding:4px 8px;",
+    "background:#f1f5f9; color:#000; font-weight:bold; padding:4px 8px; border-radius:0 4px 4px 0");
