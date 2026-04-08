@@ -1,83 +1,15 @@
-/* Estilos Base */
+/* --- 1. CONFIGURACIÓN GLOBAL Y SCROLL --- */
+html {
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 100px; /* Valor unificado para que el nav no tape los títulos */
+}
+
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
-/* Efecto Glass en Nav */
-.glass {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* Estilos de los Dropdowns */
-.dropdown-item {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #475569; /* slate-600 */
-    transition: all 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.dropdown-item i {
-    width: 20px;
-    margin-right: 12px;
-    font-size: 0.9rem;
-}
-
-.dropdown-item:hover {
-    background-color: #f8fafc;
-    color: #16a34a; /* green-600 */
-    padding-left: 2rem;
-}
-
-/* Animaciones Reveal */
-.reveal {
-    position: relative;
-    transform: translateY(50px);
-    opacity: 0;
-    transition: all 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-}
-
-.reveal.active {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* Hover de video */
-.video-container {
-    transition: transform 0.6s ease;
-}
-.video-container:hover {
-    transform: translateY(-10px);
-}
-/* EFECTOS EXTRA PARA QUE SE VEA BIEN */
-
-/* Animación de pulso para iconos verdes */
-.pulse-green {
-    animation: pulse-green 2s infinite;
-}
-
-@keyframes pulse-green {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4); }
-    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
-}
-
-/* Efecto de borde brillante para las tarjetas */
-.card-glow:hover {
-    box-shadow: 0 20px 40px -10px rgba(22, 163, 74, 0.3);
-    border-color: #16a34a;
-}
-
-/* Scrollbar personalizado verde */
+/* Scrollbar personalizado verde (General) */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -91,109 +23,237 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #15803d;
 }
-/* Estilo para los inputs de la calculadora */
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+
+/* --- 2. NAVEGACIÓN Y MENÚS --- */
+.glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Efecto de Vidrio para el contenedor del video */
-.video-outer-glow {
-    box-shadow: 0 0 80px -10px rgba(22, 163, 74, 0.2);
+.dropdown-menu {
+    max-height: 85vh;
+    overflow-y: auto;
 }
 
-/* Animación para el botón de WhatsApp */
-.pulse-green {
-    animation: pulse-green-btn 2s infinite;
+/* Scroll interno del menú */
+.dropdown-menu::-webkit-scrollbar {
+    width: 5px;
 }
 
-@keyframes pulse-green-btn {
-    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(34, 197, 94, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-}
-/* Asegura que al dar clic en el menú, la sección no quede tapada por la barra de navegación */
-html {
-    scroll-padding-top: 100px; /* Ajusta este valor según la altura de tu nav */
-}
-
-/* Efecto de brillo sutil para la imagen del logo */
-.logo-img-glow {
-    filter: drop-shadow(0 0 5px rgba(22, 163, 74, 0.2));
-}
-
-/* Estilo para los ítems del menú de acceso directo */
 .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #475569;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     cursor: pointer;
     border-left: 4px solid transparent;
 }
 
-.dropdown-item:hover {
-    border-left: 4px solid #16a34a; /* Línea verde al pasar el mouse */
-    background: linear-gradient(to right, #f0fdf4, #ffffff);
-}
-/* FAQ Interactivo */
-.faq-item.active {
-    border-color: #16a34a; /* verde */
-    background: #f0fdf4;
+.dropdown-item i {
+    width: 20px;
+    margin-right: 12px;
+    font-size: 0.9rem;
 }
 
+.dropdown-item:hover {
+    background: linear-gradient(to right, #f0fdf4, #ffffff);
+    color: #16a34a;
+    padding-left: 2rem;
+    border-left: 4px solid #16a34a;
+}
+
+/* Estilo Industrial para enlaces específicos */
+.ind-link {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #94a3b8;
+    padding: 8px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.ind-link:hover {
+    color: #ffffff;
+    padding-left: 10px;
+    background: linear-gradient(to right, rgba(22, 163, 74, 0.1), transparent);
+}
+
+.ind-link i {
+    width: 25px;
+    font-size: 12px;
+    color: #475569;
+    transition: 0.3s;
+}
+
+.ind-link:hover i {
+    color: #22c55e;
+    transform: scale(1.2);
+}
+
+/* --- 3. COMPONENTES Y SECCIONES --- */
+
+/* Hero y Textos */
+.text-green-500 {
+    background: linear-gradient(to right, #22c55e, #16a34a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+.font-menu {
+    letter-spacing: 0.3em;
+}
+
+/* Video */
+.video-container {
+    transition: transform 0.6s ease;
+}
+.video-container:hover {
+    transform: translateY(-10px);
+}
+.video-outer-glow {
+    box-shadow: 0 0 80px -10px rgba(22, 163, 74, 0.2);
+}
+
+/* FAQ */
+.faq-item.active {
+    border-color: #16a34a;
+    background: #f0fdf4;
+}
 .faq-item.active p {
     display: block;
 }
-
 .faq-item.active i {
     transform: rotate(45deg);
-    color: #ef4444; /* rojo al cerrar */
+    color: #ef4444;
 }
 
-/* Efecto de cristal para la ficha técnica */
+/* Ficha Técnica y Tablas */
 #especificaciones .bg-slate-50 {
     transition: all 0.4s ease;
 }
-
 #especificaciones .bg-slate-50:hover {
     background: #ffffff;
     transform: translateX(10px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
-/* Efecto de Desenfoque en el Fondo de Galería */
+table {
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+/* Laboratorio */
+.backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
+/* Equipo y Galería */
+#equipo h5 {
+    letter-spacing: -1px;
+}
 .group:hover img {
     filter: blur(2px) grayscale(50%);
 }
 
-/* Decoración para los nombres del equipo */
-#equipo h5 {
-    letter-spacing: -1px;
+/* --- 4. MODALES Y ELEMENTOS FLOTANTES --- */
+
+/* Certificado */
+#modalCertificado.active {
+    display: flex;
+    animation: fadeIn 0.5s ease;
+}
+#modalCertificado .max-w-2xl {
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+#modalCertificado.active .max-w-2xl {
+    transform: scale(1);
+}
+#areaCertificado::before {
+    content: 'BRIQO';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 150px; font-weight: 900;
+    color: rgba(0,0,0,0.02);
+    z-index: 0; pointer-events: none;
 }
 
-/* Ajuste de color para links de redes en el footer */
+/* Sello flotante lateral */
+.sello-itsr {
+    position: fixed;
+    top: 50%; right: -50px;
+    transform: rotate(-90deg);
+    background: #16a34a;
+    color: white;
+    padding: 10px 20px;
+    font-size: 10px; font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 5000;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* --- 5. FOOTER Y MARCAS DE AGUA --- */
+footer {
+    position: relative;
+    box-shadow: 0 -20px 50px rgba(0,0,0,0.2);
+}
 footer i:hover {
     color: #16a34a;
     transform: translateY(-3px);
     transition: 0.3s;
 }
-
-/* Scroll lateral para móviles en la tabla de especificaciones si fuera necesario */
-@media (max-width: 768px) {
-    .grid {
-        gap: 2rem;
-    }
+footer ul li a {
+    transition: all 0.3s ease;
 }
-/* Animación de entrada del certificado */
-#modalCertificado.active {
-    display: flex;
-    animation: fadeIn 0.5s ease;
+footer img {
+    filter: grayscale(100%) brightness(200%);
+    opacity: 0.8;
 }
-
-#modalCertificado .max-w-2xl {
-    transform: scale(0.9);
-    transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+footer p {
+    letter-spacing: 0.5em;
+    font-weight: 800;
 }
 
-#modalCertificado.active .max-w-2xl {
-    transform: scale(1);
+#comparativa::after {
+    content: 'BRIQO ENGINEERING';
+    position: absolute;
+    bottom: 5%; right: 5%;
+    font-size: 8rem; font-weight: 900;
+    color: rgba(0,0,0,0.02);
+    z-index: -1; pointer-events: none;
+    transform: rotate(-5deg);
+}
+
+/* --- 6. ANIMACIONES --- */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal.active .bg-green-500 {
+    transition: width 2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
 @keyframes fadeIn {
@@ -201,155 +261,58 @@ footer i:hover {
     to { opacity: 1; }
 }
 
-/* Marca de agua sutil para el certificado */
-#areaCertificado::before {
-    content: 'BRIQO';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    font-size: 150px;
-    font-weight: 900;
-    color: rgba(0,0,0,0.02);
-    z-index: 0;
-    pointer-events: none;
-}
-/* Estilo de fuentes de ingeniería */
-.font-menu {
-    letter-spacing: 0.3em;
+/* Pulsos */
+.pulse-green {
+    animation: pulse-green-btn 2s infinite;
 }
 
-/* Efecto de pulso para la sección de seguridad */
+@keyframes pulse-green-btn {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(34, 197, 94, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
 .animate-pulse {
     animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
-
 @keyframes pulse-slow {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: .5; transform: scale(1.1); }
 }
 
-/* Bordes decorativos para el modo oscuro */
-.bg-slate-950 {
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-/* Tabla con bordes redondeados pro */
-table {
-    border-spacing: 0;
-    overflow: hidden;
-}
-
-/* Efecto de degradado sutil para el Roadmap */
-.bg-green-600.animate-ping {
-    background-color: rgba(22, 163, 74, 0.4);
-}
-
-/* Marca de agua institucional para secciones blancas */
-#comparativa::after {
-    content: 'BRIQO ENGINEERING';
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-    font-size: 8rem;
-    font-weight: 900;
-    color: rgba(0,0,0,0.02);
-    z-index: -1;
-    pointer-events: none;
-    transform: rotate(-5deg);
-}
-/* Animación del Sello Giratorio */
+/* Giros y Escritura */
 .animate-spin-slow {
     animation: spin-slow 12s linear infinite;
 }
-
 @keyframes spin-slow {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-/* Mejora visual para los bloques de logística */
-#logistica .p-10:hover i {
-    transform: translateY(-10px) rotate(10deg);
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Estilo de la tipografía del footer para que sea más "Legal" */
-footer p {
-    letter-spacing: 0.5em;
-    font-weight: 800;
-}
-/* Efecto de Vidrio para el Laboratorio */
-.backdrop-blur-xl {
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-}
-
-/* Animación de la barra de progreso */
-.reveal.active .bg-green-500 {
-    transition: width 2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-}
-
-/* Estilo de la cita de testimonios */
-#testimonios p {
-    line-height: 1.8;
-}
-
-/* Sello de "Aprobado por el ITSR" flotante */
-.sello-itsr {
-    position: fixed;
-    top: 50%;
-    right: -50px;
-    transform: rotate(-90deg);
-    background: #16a34a;
-    color: white;
-    padding: 10px 20px;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    z-index: 5000;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-/* Graduación de color para el texto resaltado del final corregido */
-.text-green-500 {
-    background: linear-gradient(to right, #22c55e, #16a34a);
-    -webkit-background-clip: text; /* Para Chrome y Safari */
-    background-clip: text;         /* Propiedad estándar para compatibilidad */
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-}
-
-/* Efecto de "Glow" para el footer oscuro */
-footer {
-    position: relative;
-    box-shadow: 0 -20px 50px rgba(0,0,0,0.2);
-}
-
-/* Transición para los links del footer con flecha */
-footer ul li a {
-    transition: all 0.3s ease;
-}
-
-/* Estilo para que la imagen del logo en el footer se vea elegante (blanca/gris) */
-footer img {
-    filter: grayscale(100%) brightness(200%);
-    opacity: 0.8;
-}
-/* Cursor parpadeante */
 .cursor-escribiendo {
     display: inline-block;
     margin-left: 2px;
     animation: parpadeo 0.8s infinite;
 }
-
 @keyframes parpadeo {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
 
-/* Para ocultar el cursor cuando termine */
-.ocultar-cursor {
-    display: none;
+/* --- 7. UTILIDADES Y RESPONSIVE --- */
+.ocultar-cursor { display: none; }
+
+.bg-slate-950 {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+@media (max-width: 768px) {
+    .grid { gap: 2rem; }
 }
