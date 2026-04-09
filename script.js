@@ -269,7 +269,7 @@ console.log("%c SUCCESS %c Proyecto BRIQO Tepexi Finalizado %c v3.0 ",
  */
 const fraseElemento = document.getElementById('frase-hero');
 const cursor = document.querySelector('.cursor-escribiendo');
-const textoFrase = '"Transformando el residuo textil en muros de vida para la Mixteca Poblana."';
+const textoFrase = '"Somos una empresa especializada en la fabricación y comercialización de ladrillos ecologicos a base de ropa en desuso."';
 
 if (fraseElemento) {
     let indice = 0;
