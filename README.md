@@ -1,30 +1,56 @@
-# 🧱 BRIQO - Innovación Sustentable
-> **"BRI (Brick) + QO (Amor)"** - Transformando el PET de la Mixteca en hogares sólidos.
+# BRIQO - Ingeniería Textil Sustentable 🧱🌱
 
-### 📍 Proyecto Regional: Tepexi de Rodríguez, Puebla.
-Este sistema web es una herramienta técnica diseñada para concientizar sobre el impacto ambiental del PET y el Unicel en la región Mixteca, ofreciendo una alternativa de construcción ecológica de alto impacto social.
-
-## 🚀 Características Técnicas
-* **Eco-Calculadora Pro:** Algoritmos de cálculo de impacto ambiental (Botellas recicladas vs CO2 evitado).
-* **Análisis de Materiales:** Desglose dinámico de la mezcla polimérica (PET/Unicel/Cemento).
-* **Simulador Térmico:** Comparativa visual de eficiencia energética (BRIQO vs Block Común).
-* **Generador de Certificados:** Exportación de resultados a imagen PNG mediante `html2canvas`.
-* **UI/UX:** Diseño responsivo con Tailwind CSS y animaciones interactivas.
-
-## 🛠️ Tecnologías Utilizadas
-* **Frontend:** HTML5, CSS3, JavaScript (ES6+).
-* **Framework de Estilos:** [Tailwind CSS](https://tailwindcss.com/).
-* **Librerías Extra:** `canvas-confetti` (celebración) y `html2canvas` 
-* **Despliegue y CI/CD:** [Vercel](https://vercel.com/) (Integración continua con GitHub).
-
-## 👥 Equipo de Ingeniería - ITSR
-* **Mayte Tellez Vidal** - Líder de Proyecto.
-* **Jose Luis Merino** - Arquitectura de Software y Desarrollo Web.
-* **[Nombre de tu otro compañero]** - Investigación de Campo y Materiales.
-
-## 🌐 Visualización en Vivo
-Puedes acceder a la versión oficial del proyecto aquí:
-👉 **[briqo-web.vercel.app](https://briqo-web.vercel.app)**
+**BRIQO** es un proyecto de innovación radical que transforma residuos textiles (ropa en desuso) en materiales de construcción sustentables, promoviendo la economía circular y la reducción del impacto ambiental en la industria de la edificación.
 
 ---
-*© 2026 - Instituto Tecnológico Superior de Tepexi de Rodríguez (ITSR)*
+
+## 🚀 Características del Proyecto Web
+Este sitio web ha sido diseñado como una plataforma de presentación técnica de alto impacto para el **Tecnológico Superior de Tepexi de Rodriguez**, destacando los siguientes módulos:
+
+* **Descripción del Producto:** Detalle sobre la transformación de ropa triturada en ladrillos funcionales.
+* **Relación con la Agenda 2030:** Alineación con los ODS 9, 11, 12 y 13.
+* **Sustento Técnico:** Clasificación de fibras (Naturales vs. Sintéticas) y estudios de laboratorio (resistencia, densidad y fuego).
+* **Innovación Radical:** Fundamentos sobre el cambio de paradigma en materiales de construcción.
+* **Interfaz Premium:** Diseño minimalista con animaciones de revelado y navegación inteligente.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+Para el desarrollo de esta plataforma se utilizaron las siguientes tecnologías:
+
+- **HTML5:** Estructura semántica avanzada.
+- **Tailwind CSS:** Framework de diseño para una interfaz moderna y responsiva.
+- **JavaScript:** Implementación de efectos de escritura automática (Typewriter), animaciones de scroll y control de navegación.
+- **FontAwesome:** Librería de iconos vectoriales para la interfaz técnica.
+
+---
+
+## 👥 Equipo de Proyecto
+### Mentes detrás de BRIQO (Ingeniería del Material)
+* **Mayte Tellez Vidal** - Líder de Proyecto
+* **Grisel Pérez Vazquez** - Investigación Técnica
+* **Mayte Gisela González Martínez** - Gestión Ambiental
+
+### Desarrollo Tecnológico (Web & Digital)
+* **Jose Luis Corefix** - Lead Web Developer
+    * *Responsable del diseño de interfaz, arquitectura de la información y despliegue de la plataforma.*
+
+---
+
+## ⚙️ Instalación y Uso Local
+1. Clona este repositorio o descarga la carpeta del proyecto.
+2. Abre la carpeta en **Visual Studio Code**.
+3. Asegúrate de tener instalada la extensión **Live Server**.
+4. Haz clic derecho sobre el archivo `index.html` y selecciona **"Open with Live Server"**.
+5. La página se abrirá automáticamente en `http://127.0.0.1:5500`.
+
+---
+
+## 📄 Notas de Versión (v1.0.0)
+- ✅ Implementación de IDs de navegación para el índice desplegable.
+- ✅ Corrección de jerarquía de marca (Foco en BRIQO Engineering).
+- ✅ Optimización de assets visuales y rutas de imagen.
+- ✅ Sección de autoría de desarrollo integrada.
+
+---
+*Desarrollado con fines académicos y de innovación tecnológica para el ITSR.*
