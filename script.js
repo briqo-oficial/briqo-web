@@ -292,3 +292,33 @@ if (fraseElemento) {
         setTimeout(escribirFrase, 800); 
     });
 }
+// --- FUNCIONES ADICIONALES BRIQO ---
+
+// Función para simular la descarga de la Ficha Técnica
+function descargarFicha() {
+    // Esto lanza confeti para celebrar que el usuario se interesó en la técnica
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#22c55e', '#16a34a', '#ffffff']
+    });
+
+    // Simulación de descarga
+    setTimeout(() => {
+        alert("Generando Dictamen Técnico ITSR 2026...\nEl documento PDF se descargará en breve.");
+    }, 500);
+}
+
+// Agregar efecto de revelado a las nuevas imágenes de la galería
+window.addEventListener('scroll', function() {
+    const reveals = document.querySelectorAll('.reveal');
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add('active');
+        }
+    }
+});
